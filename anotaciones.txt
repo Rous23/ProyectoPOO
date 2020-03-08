@@ -1,0 +1,26 @@
+<nav style="padding: 30px 20px;">
+    <div class="container">
+        <a href="#">MoonLight</a>
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Categorias</a>
+        <div style="display: inline;" class="mr-auto ml-auto">
+            <form class="form-inline my-2 my-lg-0" style="display: inline-block" >
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <input class="btn btn-outline-success mx-3" type="button" value="Iniciar Sesión" style="display: inline-block" >
+        </div>
+    </div>    
+</nav>
+
+flex-wrap: wrap para que llas imagenes queden separadas si no se usa sistemas de grillas
+text-shadow:0.2px  0px 0px #19547b, borde del texto
+            0px  0.2px 0px #19547b,
+            -0.2px  0px 0px #19547b,
+            0px -0.2px 0px #19547b;
+
+-----------------------------------------------------------------------------------------------
+redireccionar por medio de js
+funcion onclick en el button
+onclick="window.location.href='direccion del archivo'"
