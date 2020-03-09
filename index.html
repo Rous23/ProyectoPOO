@@ -39,7 +39,7 @@
                             </div>
                         </li>
                         </ul>
-                        <a href="registrarse.html"><button type="button" class="btn btn-outline-success">Iniciar Sesión</button></a>
+                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">Iniciar Sesión</button>
                     </div>
                 </div>
             </nav>
@@ -76,9 +76,9 @@
                         <div class="card">
                             <img class="card-img-top" src="img/usuario-1.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Cliente</h5>
+                                <h5 class="card-title">Si Aun no te has registrado</h5>
                                 <p class="card-text">Al registrarte como cliente optienes las posibilidades de ver los productos en promocion, comprar, agregar articulos favoritos, entre otros.</p>
-                                <button class="btn btn-outline-success" type="button">Registrarte</button>
+                                <a href="registrarse.html"><button class="btn btn-outline-success" type="button">Registrarte</button></a>
                             </div>
                         </div>
                     </div>
@@ -86,9 +86,9 @@
                         <div class="card">
                             <img class="card-img-top" src="img/usuario-1.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">Cliente</h5>
+                                <h5 class="card-title">Empresa</h5>
                                 <p class="card-text">Al registrarte como cliente optienes las posibilidades de ver los productos en promocion, comprar, agregar articulos favoritos, entre otros.</p>
-                                <button class="btn btn-outline-success" type="button">Registrarte</button>
+                                <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#exampleModalCenter">Iniciar Sesión</button>
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Cliente</h5>
                                 <p class="card-text">Al registrarte como cliente optienes las posibilidades de ver los productos en promocion, comprar, agregar articulos favoritos, entre otros.</p>
-                                <button class="btn btn-outline-success" type="button">Registrarte</button>
+                                <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#exampleModalCenter">Iniciar Sesión</button>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
     </section>
 <!------------------------------------------------------------------------------------------------------------>
     <div class="content-productos container">
-        <h2 class="titulos">Nuestras promociones</h2>
+        <h2 class="titulos">Nuevas promociones</h2>
         <div class="container-fluid ">
             <div class="row py-5">
                 <div class="col-lg-3 col-md-6 col-12 my-2">
@@ -241,7 +241,52 @@
         </div>
     </footer>
 
+<!--------------------ventanaModal--------------------------------------------------------->
+   <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center" id="exampleModalCenterTitle">Iniciar Sesion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="px-5">
+                        <div class="row " style="font-size: 15px;">
+                            <div class="col-12 mb-4">
+                                <label for="inicio-correo">Correo Electronico</label>
+                                <input class="form-control" type="email" placeholder="asdfg@asd.df">
+                            </div>
+                            <div class="col-12 mb-4">
+                                <label for="inicio-contraseña">Contraseña</label>
+                                <input class="form-control" type="password" placeholder="***********">
+                            </div>
+                            <div class="col-6 mb-4">
+                                <input class="form-input-checkbox" type="checkbox" id="recordar">
+                                <label for="recordar">Recordarme</label>
+                            </div>
+                            <div class="col-6 mb-4">
+                                <a href="registrarse.html">¿Aun no tienes cuenta?</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center my-3">
+                                <button type="button" class="btn btn-outline-success" data-dismiss="modal">Iniciar Sesión</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+<!----------------------------------------------------------------------------------------->
+
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+<a href="registrarse.html"></a>

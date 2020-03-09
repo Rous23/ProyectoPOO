@@ -1,47 +1,52 @@
- var usuarios=[
+var usuarios=[
     {
         empresa: [
-            {
-                nombre:'empresa1',
-                username:'coronavirus',
-                perfil: 'imagen.jpg',
-                portada: 'imagen2.jpg',
-                email: 'user@gmail.com',
-                contrasenia: 'password',
-                pais:'nombrePais',
-                direccion:'col.san jose',
-                tarjeta:'tipoTarjeta',
-                numeroTarjeta:'4567-4322-2344',
-                vencimiento:'fecha',
-                cvv:'234',
-                redes:[],
-                latitud:'3455',
-                longitud:'asdh'
-            }
-        ],
-        
-        cliente:[
-            {
-                nombre:'cliente1',
-                username:'Rous',
-                perfil: 'imagen.jpg',
-                portada: 'imagen2.jpg',
-                email: 'user@gmail.com',
-                contrasenia: 'password',
-                pais:'nombrePais',
-                direccion:'col.san jose',
+            /*{
+                nombre:'',
+                username:'',
+                perfil: '',
+                portada: '',
+                email: '',
+                contrasenia: '',
+                pais:'',
+                direccion:'',
                 tarjeta:[
                     {
-                        numeroTarjeta:'4567-4322-2344',
-                        vencimiento:'fecha',
-                        cvv:'234'
+                        numeroTarjeta:'',
+                        vencimiento:'',
+                        cvv:''
+                    }
+                ],
+                numeroTarjeta:'',
+                vencimiento:'',
+                cvv:'',
+                redes:[],
+                latitud:'',
+                longitud:''
+            }*/
+        ],
+        cliente:[
+            /*{
+                nombre:'',
+                username:'',
+                perfil: '',
+                portada: '',
+                email: '',
+                contrasenia: '',
+                pais:'',
+                direccion:'',
+                tarjeta:[
+                    {
+                        numeroTarjeta:'',
+                        vencimiento:'',
+                        cvv:''
                     }
                 ],
                 redes:[],
-                genero:'F',
-                latitud:'3455',
-                longitud:'asdh'
-            }
+                genero:'',
+                latitud:'',
+                longitud:''
+            }*/
         ],
         superAdministrador:[
             {
@@ -50,4 +55,43 @@
 
         }]
     }
-]
+];
+
+
+function mostrarFormulario(valor){
+    console.log(valor);
+    document.querySelector('#formulario').style.display = 'block';
+    document.querySelector('#seleccionado').style.display = 'none';
+}
+
+function login(){
+    validarCampoVacio('nombre');
+    validarCampoVacio('apellido');
+    validarCampoVacio('usuario');
+    validarCampoVacio('email');
+    validarCampoVacio('contraseña');
+    validarCampoVacio('contraseña2');
+    validarCampoVacio('numeroTarjeta');
+    validarCampoVacio('vencimiento');
+    validarCampoVacio('cvv');
+    validarCampoVacio('latitud');
+    validarCampoVacio('longitud');
+    validarCampoVacio('direccion');
+        
+}
+function validarCampoVacio(id){
+    if (document.getElementById(id).value == ''){
+        document.getElementById(id).classList.remove('input-success');
+        document.getElementById(id).classList.add('input-error');
+        
+    }else{ 
+        document.getElementById(id).classList.remove('input-error');
+        document.getElementById(id).classList.add('input-success');
+    }
+}
+/*
+expresion regular tarjeta de credito o debito: regex = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|6(?:011|5[0-9][0-9])[0-9]{12})$/;
+
+
+*/ 
+
