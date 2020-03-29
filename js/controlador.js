@@ -58,14 +58,10 @@ var usuarios=[
 ];
 
 
-/*function mostrarFormulario(valor){
-    console.log(valor);
-    document.querySelector('#formulario').style.display = 'block';
-    document.querySelector('#seleccionado').style.display = 'none';
-}*/
+/**/
 
 function login(){
-    validarCampoVacio('nombre');
+    /*validarCampoVacio('nombre');
     validarCampoVacio('apellido');
     validarCampoVacio('usuario');
     validarCampoVacio('email');
@@ -76,7 +72,9 @@ function login(){
     validarCampoVacio('cvv');
     validarCampoVacio('latitud');
     validarCampoVacio('longitud');
-    validarCampoVacio('direccion');
+    validarCampoVacio('direccion');*/
+    validarCampoVacio('inicio-correo');
+    validarCampoVacio('inicio-contraseña');
         
 }
 function validarCampoVacio(id){

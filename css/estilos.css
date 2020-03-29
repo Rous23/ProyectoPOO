@@ -221,3 +221,18 @@ footer{
 #productos-principal .card{
     border-radius: 7px;
 }
+/*******RegistrarseClientesYEmpresa*********/
+.estilo-clientes{
+    background-image: url(../img/card8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+.estilo-empresa{
+    background-image: url(../img/card2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}

@@ -32,16 +32,16 @@
                             Productos
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="subCategoria.html">Tecnologia</a>
-                                    <a class="dropdown-item" href="#">Electrodomesticos</a>
-                                    <a class="dropdown-item" href="#">Salud y belleza</a>
-                                    <a class="dropdown-item" href="#">Accesorios</a>
-                                    <a class="dropdown-item" href="#">Ropa de dama</a>
-                                    <a class="dropdown-item" href="#">Ropa de caballero</a>
-                                    <a class="dropdown-item" href="#">Zapatos</a>
-                                    <a class="dropdown-item" href="#">Hogar</a>
-                                    <a class="dropdown-item" href="#">Libros</a>
-                                    <a class="dropdown-item" href="#">Mascotas</a>
+                                <a class="dropdown-item" href="subCategoria.html">Tecnologia</a>
+                                <a class="dropdown-item" href="#">Electrodomesticos</a>
+                                <a class="dropdown-item" href="#">Salud y belleza</a>
+                                <a class="dropdown-item" href="#">Accesorios</a>
+                                <a class="dropdown-item" href="#">Ropa de dama</a>
+                                <a class="dropdown-item" href="#">Ropa de caballero</a>
+                                <a class="dropdown-item" href="#">Zapatos</a>
+                                <a class="dropdown-item" href="#">Hogar</a>
+                                <a class="dropdown-item" href="#">Libros</a>
+                                <a class="dropdown-item" href="#">Mascotas</a>
                             </div>
                         </li>
                         </ul>
@@ -83,42 +83,59 @@
 
 <!------------------------Paquetes---------------------------->
     <section class="content-paquetes">
-        <div class="container">
+        <div class="container text-center">
             <h2 class="titulos">Paquetes Empresariales</h2>
             <div class="row">
-                <div class="card-deck mx-3">
-                    <div class="col-lg-4 col-md-6 col-12 my-2">
-                        <div class="card">
-                            <img class="card-img-top cards-paquetes" src="img/cards1.jpg" alt="Card image cap">
-                            
-                            <div class="card-body">
-                                <h5 class="card-title">¿No tienes Cuenta?</h5>
-                                <hr>
-                                <p class="card-text">Si no tienes cuenta podras visualizar algunos productos en promoción, para poder comprar los productos deberas registrarte.</p>
-                            </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="img/cards2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">Gratis</h5>
+                        <hr>
+                        <p class="card-text py-3">$ 0 / mes <br> 10 usuarios incluidos <br>
+                            2 GB de almacenamiento <br>
+                            Soporte de correo electrónico <br>
+                            Acceso al centro de ayuda</p>
+                        </div>
+                        <div class="card-footer">
+                        <small class="text-muted"></small>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-2">
-                        <div class="card">
-                            <img class="card-img-top cards-paquetes" src="img/cards2.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Empresa</h5>
-                                <hr>
-                                <p class="card-text">Al registrarte como empresa podras tener acceso a la publicacion de tus productos y promociones como tambien un dashboard sobre tu tienda.</p>
-                            </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="img/cards2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">Pro</h5>
+                        <hr>
+                        <p class="card-text py-3">$ 15 / mes <br>
+                                20 usuarios incluidos <br>
+                                10 GB de almacenamiento <br>
+                                Soporte prioritario por correo <br>
+                                Acceso al centro de ayuda</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"></small>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-12 my-2 mx-auto">
-                        <div class="card">
-                            <img class="card-img-top cards-paquetes" src="img/cards3.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Cliente</h5>
-                                <hr>
-                                <p class="card-text">Al registrarte como cliente optienes las posibilidades de ver los productos en promocion, comprar, agregar articulos favoritos, entre otros.</p>
-                            </div>
+                </div>
+                <div class="col-4">
+                    <div class="card">
+                        <img src="img/cards2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">Crecimiento</h5>
+                        <hr>
+                        <p class="card-text py-3">$29 / mes <br>
+                                30 users included <br>
+                                15 GB of storage <br>
+                                Phone and email support <br>
+                                Help center access</p>
+                        </div>
+                        <div class="card-footer">
+                        <small class="text-muted"></small>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
         </div>
     </section>
@@ -240,12 +257,12 @@
                             <h5 class="py-4" style="text-align: center;">Iniciar Sesion</h5>
                             <div class="row " style="font-size: 15px;">
                                 <div class="col-12 mb-4">
-                                    <label for="inicio-correo">Correo Electronico</label>
-                                    <input class="form-control" type="email" placeholder="asdfg@asd.df">
+                                    <label for="inicio-correo">Correo Electronico o Usuario</label>
+                                    <input id="inicio-correo" class="form-control" type="email" placeholder="asdfg@asd.df">
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label for="inicio-contraseña">Contraseña</label>
-                                    <input class="form-control" type="password" placeholder="***********">
+                                    <input id="inicio-contraseña" class="form-control" type="password" placeholder="***********">
                                 </div>
                                 <div class="col-6 mb-4">
                                     <input class="form-input-checkbox" type="checkbox" id="recordar">
@@ -257,8 +274,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 text-center my-3">
-                                    <!--<button type="button" class="btn btn-grad px-4 py-2" data-toggle="modal" data-target="#exampleModalCenter">Iniciar Sesión</button>-->
-                                    <a class="btn btn-grad px-4 py-2" href="usuario.html" role="button">Iniciar Sesión</a>
+                                    <button onclick="login()" type="button" class="btn btn-grad px-4 py-2">Iniciar Sesión</button>
+                                    <!--<a onclick="login()" class="btn btn-grad px-4 py-2" href="usuario.html" role="button">Iniciar Sesión</a>-->
                                 </div>
                             </div>
                         </div>
