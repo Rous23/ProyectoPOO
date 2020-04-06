@@ -17,10 +17,6 @@
     #detalle-categoria{
         font-size: 13px!important;
     }
-    #categorias-Principal .px-5{
-        padding-left: 1rem!important;
-        padding-right: 1rem!important;
-    }
 }
 @media screen and (max-width: 990px){
     .content-inf{
@@ -40,7 +36,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Merienda One', cursive;
+    font-family: 'Baloo Thambi 2', cursive;
+    font-size: 15px;
 }
 .cards-paquetes{
     border-radius: 5px;
@@ -51,11 +48,12 @@ header{
     background-image: url(../img/p1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     box-sizing: border-box;
 }
 header .contenido-header{
     width: 100%;
-    height: 400px;
+    height: 450px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -73,7 +71,7 @@ header .contenido-header{
     color: white;
 }
 #content-header{
-    background: linear-gradient(0deg, rgba(255, 127, 80, .8) 10%, rgba(255, 127, 80,.8) 90%);
+    background: linear-gradient(0deg, rgba(77, 170, 135, .9) 10%, rgba(77, 170, 135, .75) 90%);
     width: 100%;
     height: 100%; 
     margin: 0 0 0 0;
@@ -90,11 +88,10 @@ header .contenido-header{
     border: 0;
     border-top: 2px solid rgba(0,0,0,.1);
 }
-.nav-link{
+/*.nav-link{
     color: rgba(0, 0, 128, .8); 
     color: #7216af;
-    color: rgb(93, 60, 88);
-    color: white;
+    color:rgb(93, 60, 88);
     font-size: 20px;
     font: bold!important;
 }
@@ -102,20 +99,15 @@ header .contenido-header{
     color: rgba(0, 0, 128, .8); 
     font-family: 'Merienda One', cursive;
     font-size: 20px;
-}
-.navbar-toggler-icon{
-    background-image: url(../img/click.png)!important;
-}
+}*/
 /******************************************************/
 /********************Estilos Footer********************/
 footer{
-    background-color: rgb(128, 0, 128, .5);
-    background-color: #7216af;
-    background-color: rgba(255, 127, 80, .8);
+    background-color: rgba(77, 170, 135, .9);
 }
 /******************************************************/
 .titulos{
-    color: coral;
+    color: rgba(77, 170, 135, .9);
     font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
@@ -154,6 +146,7 @@ footer{
     width: 100%;
     height: 100%;
     background: rgba(100, 76, 178, .90);
+    background: rgba(101, 57, 127, .90);
     text-align: center;
     transform: scale(0); /*para que la imagen que esta sobre no se mire*/
     transition: 0.5s;
@@ -182,7 +175,8 @@ footer{
     background: linear-gradient(0deg, rgba(230, 164, 141, 0.5) 10%, rgba(255, 127, 80,.5) 90%)!important;
 }
 
-.cards .card-body{
+
+.modal-incio-sesion .cards .card-body{
     border: 1px solid #673AB7;
 }
 /*********************************************
@@ -202,15 +196,19 @@ footer{
 }
 *******************************************/
 /**Principal**/
+#principal-background{
+    background: linear-gradient(0deg, rgb(93, 60, 88) 10%,rgba(93, 60, 88, .5) 90%);
+    background: linear-gradient(0deg, #F2F2F2 80%, rgb(77, 170, 135, .98)100%); 
+}
 .col-lg-2, .col-md-3, .col-sm-6, .col-12{
     padding-right: 6px!important;
     padding-left: 6px!important;
 }
-#categoria-productos .card-footer{
+#categorias-principal .card-footer{
     padding-right: 0%!important;
     padding-left: 0%!important;
 }
-#categoria-productos .card{
+#categorias-principal .card{
     color: white;
 }
 #productos-principal .card-body{
@@ -221,6 +219,16 @@ footer{
 #productos-principal .card{
     border-radius: 7px;
 }
+#info-tienda .col-3{
+    border-radius: 0%!important;
+    padding-right: 0%!important;
+    padding-left: 0%!important;
+}
+#categorias-Principal .col-lg-3,.col-md-4,.col-6{
+    padding-left: 8px!important;
+    padding-right: 8px!important;
+}
+
 /*******RegistrarseClientesYEmpresa*********/
 .estilo-clientes{
     background-image: url(../img/card8.jpg);
@@ -236,3 +244,165 @@ footer{
     background-size: cover;
     color: white;
 }
+/***********Subcategoria*********/
+#sidebar-categoria{
+    padding-left: 0%!important;
+    padding-right: 0%!important;
+}
+#sidebar-categoria li:hover{
+    background: rgba(93, 60, 88, .5);
+}
+#sidebar-categoria .nav-item{
+    position: relative;
+}
+#sidebar-categoria .nav-item .nav-link{
+    position: relative;
+}
+#sidebar-categoria .nav-link{
+    display: block;
+}
+#sidebar-categoria .nav-item .nav-link span {
+    font-size: .75rem;
+    display: block;
+}
+@media (min-width: 768px){
+    #sidebar-categoria .nav-item .nav-link span {
+    font-size: .85rem;
+    display: inline;
+    }
+    #sidebar-categoria .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 14rem;
+    }
+}
+@media (max-width: 768px) {
+    #sidebar-categoria .nav-item .nav-link{
+        width: 6rem!important;
+        text-align: center!important;
+        padding: .75rem 1rem;
+    }
+}
+/*Perfil-Usuario*/
+#navbar-usuario{
+    padding: 0%!important;
+}
+#banner{
+    background-image: url(../img/destello-del-otono-932.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    box-shadow: 3px 29px 49px 11px rgba(93, 60, 88, .95);
+}
+.foto-perfil{
+    background-image: url(../img/perfil.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+}
+.dropdown-toggle::after {
+    display:none;
+}
+
+#nav-perfil img{
+    vertical-align: middle;
+    border-style: none;
+}
+/*Empresa*/
+#banner-empresa{
+    background-image: url(../img/destello-del-otono-932.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    box-shadow: 3px 29px 49px 11px  rgb(77, 170, 135);
+}
+#comentario-empresa .cards{
+    border:1px solid rgb(209, 209, 209)!important;
+    box-sizing: border-box;
+    background-color: white!important; 
+    border-radius: 3px; 
+    margin: 20px;
+}
+/* --SIDEBAR Empresa-- */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+#sidebar{
+    background: rgb(77, 170, 135);
+}
+#sidebar .componentes-sidebar{
+    color: white;
+    font: bold;
+}
+.sidebar-brand{
+    height:4.375rem;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:800;
+    padding:1.5rem 1rem;
+    text-align:center;
+    /*text-transform:uppercase;
+    letter-spacing:.05rem;z-index:1*/
+}
+#sidebar .sidebar-brand .sidebar-icon span{
+        display: block!important;
+}
+#sidebar .sidebar-brand .sidebar-text{
+    display:none!important;
+}
+#sidebar .nav-item{
+    position: relative;
+}
+#sidebar .nav-item .nav-link{
+    position: relative;
+}
+#sidebar .nav-link{
+    display: block;
+}
+#sidebar .nav-item .nav-link span {
+    font-size: .65rem;
+    display: block;
+}
+
+/* ----- */
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+/* -- @media -- */
+@media (min-width: 768px){
+    #sidebar .sidebar-brand .sidebar-text {
+        display: inline!important;
+    }
+    #sidebar .nav-item .nav-link span {
+    font-size: .85rem;
+    display: inline;
+    }
+    #sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 14rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar .nav-item .nav-link{
+        width: 6rem!important;
+        text-align: center!important;
+        padding: .75rem 1rem;
+    }
+}
+

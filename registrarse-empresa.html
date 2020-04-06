@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MegaPromo</title>
+    <title>Luxuary</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="fontawesome-free-5.12.1-web/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo1.png">
 </head>
 <body class="estilo-empresa">
-    <main role="main" class="container-fluid starter-template py-5" style="background: rgba(0, 0, 0, .6);">
-        <div class="text-center pb-4">
-            <img src="" class="d-block mx-auto" style="width: 80px; height: 80px;">
-            <h3>MoonLight</h3>
-            <p>¡Un mundo lleno de promociones!</p>
+    <main role="main" class="container-fluid starter-template pt-5 pb-2" style="background: rgba(0, 0, 0, .6);">
+        <div class="text-center" style="background: white;width: 18rem;margin: auto;border-radius: 10px;">
+            <span>
+                <img src="img/logo1.png" style="width:4rem; height:4rem;"></span>
+            <h3 style="color:rgba(93, 60, 88, .95); font-family: 'Lobster', cursive;">Luxuary</h3>
+            <p style="color: black;">¡Un mundo lleno de promociones!</p>
         </div>
-        <div id="seleccionado" class="container text-center mb-3" style="color: black;">
+        <div id="seleccionado" class="container text-center pb-5" style="color: black;">
             <div class="row">
                 <div class="col-12 text-center mb-3" style="color: white;">
-                    <h2>Elige tu plan Empersarial</h2>
+                    <h2>Elige tu plan Empresarial</h2>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 pb-4">
                     <div class="card">
-                        <img src="img/cards2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">Gratis</h5>
                         <hr>
@@ -35,14 +36,13 @@
                         </div>
                         <div class="card-footer">
                         <small class="text-muted">
-                            <button onclick="registrarPaquete();" type="button" class="btn btn-grad mx-1 my-1 px-5">Registrarse</button>
+                            <button onclick="registrarPaquete();" type="button" class="btn btn-grad mx-1 my-1 px-5">Empezar</button>
                         </small>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 pb-4">
                     <div class="card">
-                        <img src="img/cards2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">Pro</h5>
                         <hr>
@@ -53,13 +53,12 @@
                                 Acceso al centro de ayuda</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted"><button onclick="registrarPaquete();" type="button" class="btn btn-grad mx-1 my-1 px-5">Registrarse</button></small>
+                            <small class="text-muted"><button onclick="registrarPaquete();" type="button" class="btn btn-grad mx-1 my-1 px-5">Empezar</button></small>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-sm-6 pb-4">
                     <div class="card">
-                        <img src="img/cards2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                         <h5 class="card-title">Crecimiento</h5>
                         <hr>
@@ -70,7 +69,7 @@
                                 Help center access</p>
                         </div>
                         <div class="card-footer">
-                        <small class="text-muted"><button onclick="registrarPaquete();" type="button" class="btn btn-grad mx-1 my-1 px-5">Registrarse</button></small>
+                        <small class="text-muted"><button onclick="registrarPaquete();" type="button" class="btn btn-grad mx-1 my-1 px-5">Empezar</button></small>
                         </div>
                     </div>
                 </div>
@@ -82,13 +81,9 @@
                     <h2 class="text-center">Datos de la Empresa</h2>
                     <form>
                         <div class="row">
-                            <div class="col-md-6 col-12 my-3">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" value="">
-                            </div>
-                            <div class="col-md-6 col-12 my-3">
-                                <label for="apellido">Apellido</label>
-                                <input type="text" class="form-control" id="apellido" value="">
+                            <div class="col-12 my-3">
+                                <label for="nombreEmpresa">Nombre Empresa</label>
+                                <input type="text" class="form-control" id="nombreEmpresa" value="">
                             </div>
                             <div class="col-md-6 col-12 my-3">
                                 <label for="usuario">Usuario</label>
@@ -121,51 +116,8 @@
                                 </label>
                                 <input id="chk2" class="my-2" name="genero" type="radio" value="M"><label style="margin-right: 10px;padding-left: 5px;" for="chk2"> Maculino
                                 </label>
-                                <input id="chk3" class="my-2" name="genero" type="radio" value="X"><label style="margin-right: 5px;padding-left: 5px;" for="chk3"> Personalizado
+                                <input id="chk3" class="my-2" name="genero" type="radio" value="X"><label style="margin-right: 5px;padding-left: 5px;" for="chk3"> 0tro
                                 </label>
-                            </div>
-                            <div class="col-12 my-4">
-                                <h3>Redes Sociales</h3>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">Facebook</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                    <label class="form-check-label" for="inlineCheckbox2">Twitter</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                    <label class="form-check-label" for="inlineCheckbox3">Linkedin</label>
-                                </div>
-                            </div>
-                        </div> 
-                    </form>
-                </div>
-                <div class="col-md-6 col-sm-12 px-5 mb-5">
-                    <h2 class="text-center">Ubicación Principal</h2>
-                    <form action="">
-                        <div class="row">
-                            <div class="col-12 my-4">
-                                <img src="img/prueba-map.png" style="width: 100%; height:auto;">
-                            </div>
-                            <div class="col-md-4 col-6 my-4">
-                                <label for="latitud">Latitud</label>
-                                <input type="text" class="form-control" id="latitud" placeholder="">
-                            </div>
-                            <div class="col-md-4 col-6 my-4">
-                                <label for="longitud">Longitud</label>
-                                <input type="text" class="form-control" id="longitud" placeholder="">
-                            </div>
-                            <div class="col-md-4 col-12 my-4">
-                                <label for="pais">Pais</label>
-                                <select class="form-control" name="Seleccionar" id="pais">
-                                    <option value="honduras">Honduras</option>
-                                    <option value="elSalvador">El Salvador</option>
-                                    <option value="costarica">Costa Rica</option>
-                                    <option value="guatemala">Guatemala</option>
-                                    <option value="mexico">Mexico</option>
-                                </select>
                             </div>
                             <div class="col-12 mt-4">
                                 <h3 class="text-center">Informacion de pago</h3>
@@ -182,31 +134,88 @@
                                 <label for="cvv">CVV</label>
                                 <input class="form-control" type="text" id="cvv" value="" placeholder="123">  
                             </div>
+                        </div> 
+                    </div>
+                    <div class="col-md-6 col-sm-12 px-5 mb-5">
+                        <h2 class="text-center">Ubicación Principal</h2>
+                            <div class="row">
+                                <div class="col-12 my-4">
+                                    <img src="img/prueba-map.png" style="width: 100%; height:auto;">
+                                </div>
+                                <div class="col-md-4 col-6 my-4">
+                                    <label for="latitud">Latitud</label>
+                                    <input type="text" class="form-control" id="latitud" placeholder="">
+                                </div>
+                                <div class="col-md-4 col-6 my-4">
+                                    <label for="longitud">Longitud</label>
+                                    <input type="text" class="form-control" id="longitud" placeholder="">
+                                </div>
+                                <div class="col-md-4 col-12 my-4">
+                                    <label for="pais">Pais</label>
+                                    <select class="form-control" name="Seleccionar" id="pais">
+                                        <option value="honduras">Honduras</option>
+                                        <option value="elSalvador">El Salvador</option>
+                                        <option value="costarica">Costa Rica</option>
+                                        <option value="guatemala">Guatemala</option>
+                                        <option value="mexico">Mexico</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </form>
-                </div>
+                
                 <div class="col-12 text-center mb-5">
                     <!--<button onclick="login();" class="btn btn-grad px-4 py-2" type="button">Registrarse</button>-->
-                    <a class="btn btn-grad px-4 py-2" href="dashboard.html" role="button">Registrarse</a>
+                    <a class="btn btn-grad px-5 py-3 mt-3" onclick="registrarEmpresa()" role="button">Registrarse</a>
                 </div> 
             </div>
         </div>
+        <p class="text-center mt-5">
+        <a href="#" role="button" style="padding: 0%!important;">
+            <span style="font-size: 4rem;color: rgb(77, 170, 135);"><i class="fas fa-arrow-circle-up"></i></span>
+            </a>
+        </p>
     </main>
 
-
-    
-    <footer style="background: white;">
-        <div class="container-fluid text-center py-1" style="box-shadow: 0px 0px 5px 0px #19547b;">
-            <p class="text-center pt-3">
-                <a href="#">Back to top</a>
-            </p>
-        </div>
+<!--footer-->
+    <footer style="background: rgb(77, 170, 135);">
         <div class="container-fluid">
-            <div class="text-center">
+            <div class="row">
+                <div class="col-4 text-center">
+                    <div>
+                        <h5 class="pt-4" style="color: white;">Siguenos en nuestras redes sociales</h5>
+                        <div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-facebook-square" style="color: rgb(101, 57, 127); font-size: 3rem;"></i></div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-twitter-square" style="color: rgb(101, 57, 127);font-size: 3rem;"></i></div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-instagram-square" style="color: rgb(101, 57, 127);font-size: 3rem;"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <div>
+                        <h5 class="pt-4" style="color: white;">Servicio al cliente</h5>
+                        <div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-facebook-square" style="color: rgb(101, 57, 127); font-size: 3rem;"></i></div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-twitter-square" style="color: rgb(101, 57, 127);font-size: 3rem;"></i></div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-instagram-square" style="color: rgb(101, 57, 127);font-size: 3rem;"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <div>
+                        <h5 class="pt-4" style="color: white;">Ayuda</h5>
+                        <div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-facebook-square" style="color: rgb(101, 57, 127); font-size: 3rem;"></i></div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-twitter-square" style="color: rgb(101, 57, 127);font-size: 3rem;"></i></div>
+                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-instagram-square" style="color: rgb(101, 57, 127);font-size: 3rem;"></i></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
             <div style="padding: 5px;color: white;">
                 <hr>
-                <h3 class="text-center" style="font-size: 15px;">&copy; RA | 2020</h3>
+                <p class="text-center">&copy; RA | 2020</p>
             </div>
         </div>
     </footer>
@@ -216,7 +225,7 @@
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controlador-empresa.js"></script>
+    <script src="js/controladorRegistroEmpresa.js"></script>
 
 </body>
 </html>

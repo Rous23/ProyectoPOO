@@ -399,8 +399,127 @@ rounded-circle
             </div>
         </div>
         
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
+                    </div>
+                </div>
+
+                <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+
+                <h2>Section title</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1,001</td>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>amet</td>
+                                <td>consectetur</td>
+                                <td>adipiscing</td>
+                                <td>elit</td>
+                            </tr>
+                            <tr>
+                                <td>1,001</td>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>amet</td>
+                                <td>consectetur</td>
+                                <td>adipiscing</td>
+                                <td>elit</td>
+                            </tr>
+                            <tr>
+                                <td>1,001</td>
+                                <td>Lorem</td>
+                                <td>ipsum</td>
+                                <td>dolor</td>
+                                <td>sit</td>
+                            </tr>
+                            <tr>
+                                <td>1,002</td>
+                                <td>amet</td>
+                                <td>consectetur</td>
+                                <td>adipiscing</td>
+                                <td>elit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
+
+ <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Productos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="subCategoria.html">Tecnologia</a>
+                            <a class="dropdown-item" href="#">Electrodomesticos</a>
+                            <a class="dropdown-item" href="#">Salud y belleza</a>
+                            <a class="dropdown-item" href="#">Accesorios</a>
+                            <a class="dropdown-item" href="#">Ropa de dama</a>
+                            <a class="dropdown-item" href="#">Ropa de caballero</a>
+                            <a class="dropdown-item" href="#">Zapatos</a>
+                            <a class="dropdown-item" href="#">Hogar</a>
+                            <a class="dropdown-item" href="#">Libros</a>
+                            <a class="dropdown-item" href="#">Mascotas</a>
+                        </div>
+                    </li>
+
+/*function mostrarProductos(indice){
+    document.getElementById('mostrarSubCategoria').innerHTML='';
+    for(let i = 0 ; i < categorias[indice].subCategorias.length; i++){
+        document.getElementById('mostrarSubCategoria').innerHTML +=`
+        <div class="col-12 text-center py-4">${categorias[indice].subCategorias[i].nombre}</div>
+        <div class="col-md-3 col-6">
+            <div class="card shadow-sm">
+                <img src=${categorias[indice].subCategorias[i].productos[i].imgProducto} class="card-img-top" style="height:210px;">
+                <div class="card-body">
+                    <h5 class="card-title">${categorias[indice].subCategorias[i].productos[i].nombreProducto}</h5>
+                    <p class="card-text">${categorias[indice].subCategorias[i].productos[i].precioNormal +"  "+ categorias[indice].subCategorias[i].precioPromocion}</p>
+                </div>
+                <div class="card-footer">
+                    <p class="card-text">${categorias[indice].subCategorias[i].productos[i].porcentajeDescuento}</p>
+                </div>
+            </div>
+        </div>
+        `;
+
+    }
+}*/
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
 
 
 pagina principal 
