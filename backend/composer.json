@@ -1,0 +1,13 @@
+{
+    "name": "proyecto/backend",
+    "description": "Proyecto Programacion Orientada a Objetos",
+    "authors": [
+        {
+            "name": "Rosa Avila",
+            "email": "rosaavila14.2015@gmail.com"
+        }
+    ],
+    "require": {
+        "kreait/firebase-php": "^5.2"
+    }
+}

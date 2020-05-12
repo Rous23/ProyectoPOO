@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luxuary</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.12.1-web/css/all.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo1.png">
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid py-1">
+            <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="index.html">
+                <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
+            </a>
+            <form class="d-none d-md-inline-block form-inline mr-auto" style="align-items: center;">
+                <div class="input-group my-2 ml-5 mr-3 w-100">
+                    <input id="search-input" class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-grad my-sm-0" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <ul class="ml-auto nav-perfil">
+                <li class="nav-item dropdown text-center no-arrow d-md-none">
+                    <a id="search-dropdown" href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                        <i class="fas fa-search fa-fw"  style="color: #67397F;"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="searchDropdown">
+                        <form class="form-inline my-2 px-2" style="align-items: center;">
+                            <div class="input-group">
+                                <input id="search-input" class="form-control" type="text" placeholder="Buscar" aria-label="Search" style="width: 200px!important;">
+                                <div class="input-group-append">
+                                    <button class="btn btn-grad my-sm-0" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                    <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                        <img src="img/card4.jpg" class="img-profile rounded-circle" style="width: 2rem; height: 2rem;">
+                        <span class="mr-2 d-none d-lg-inline">Nombre</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="text-center">Nombre</div>
+                        <hr style="margin-top: .3rem;">
+                        <div class="text-center">
+                            <i class="fas fa-cogs" style="color: rgba(144, 142, 143, .8)"></i>
+                            <span>Configuración</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-sign-out-alt" style="color: rgba(144, 142, 143, .8)"></i>
+                            <span>Cerrar Sesion</span>
+                        </div>
+                    </div>    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="navbar-nav">
+            <ul class="list-unstyled"></ul>
+                <li class="nav-item">
+                    <a role="button" href="dashboard.html" class="nav-link componentes-sidebar">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a role="button" onclick="verPerfil()" class="nav-link componentes-sidebar" style="cursor:pointer">
+                        <i class="fas fa-user-alt"></i>
+                    <span>Perfil</span></a>
+                </li>
+                <li class="nav-item">
+                    <a role="button" onclick="registrarProducto()" class="nav-link componentes-sidebar" style="cursor:pointer">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Registrar productos</span></a>
+                </li>
+                <li class="nav-item">
+                    <a role="button" onclick="registrarSucursal()" class="nav-link componentes-sidebar" style="cursor:pointer">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Registrar sucursales</span></a>
+                </li>
+                <li class="nav-item">
+                    <a role="button" onclick="configuracionEmpresa()" class="nav-link componentes-sidebar" style="cursor:pointer">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Actualizar Perfil</span></a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link componentes-sidebar">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Cerrar Sesion</span></span>
+                </li> 
+            </ul>
+        </nav>
+        <!--end sidebar-->
+
+        <!-- Page Content  -->
+        <div id="content">
+            <section id="options" class="container">
+                <div class="container contenedor-perfil-cliente">
+                    <div class="contenedor-banner">    
+                        <!--<img src="img/usuario-1.jpg" style="width: 100%; height: 300px;">-->
+                    </div>
+                    <div class="img-perfil">
+                        <img class="rounded-circle img-thumbnail" src="img/icono.png" style="width: 100%;">
+                    </div>
+                    <span class="mt-auto" style="float: rigth;">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#actualizarFotos" style="color: #66397E;"><i class="fas fa-camera-retro" style="font-size: 1.5rem;"></i> Actualizar</button>
+                    </spa>
+                </div>
+                <div class="container-fluid info-cliente" style="border: .5px solid rgb(232,232,232);margin-top: 10px;">
+                    <div class="pt-2">
+                        <span style="font-size: 1.3rem;">Rosa Maria Avila Betancourt</span>
+                        <hr style="margin-top: .5rem!important;">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="descripcion-cliente px-3">
+                                    <div>Correo: rosaavila14.2015@gmail.com</div>
+                                    <div>Descripcion: Lorem ipsum dolor sit amet consectetur.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="ubicacion px-3">
+                                    <div>
+                                        Pais: Honduras
+                                    </div>
+                                    <div>
+                                        Domicilio: Col. San jose de la peña
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="mapa px-3 pb-4">
+                                    <div>
+                                        <span><i class="fas fa-map-marked-alt"></i> Ubicacion de la tienda principal:</span>
+                                        <img src="img/prueba-map.png" style="width: 100%; height: 100%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-12">
+                                <div class="sucursales container">
+                                    <span>Sucursales</span>
+                                    <div>
+                                        <ul class="list-unstyled">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>NombreSucursal</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>NombreSucursal</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>NombreSucursal</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-12">
+                                <div class="container">
+                                    <span>Redes Sociales: </span>
+                                    <div>
+                                        <ul class="list-unstyled">
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>pagina FACEBOOK</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>pagina IG</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <span>pagina Twitter</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="text-center pb-3 px-2">
+                            <span><button type="button" class="btn px-3" data-toggle="modal" data-target="#cambiarDePlan" style="color: #66397E;border: 1px solid #66397E;border-radius: 0%!important;"><i class="fas fa-swatchbook"></i> Cambiar de Plan</button></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container py-2">
+                    <div class="row mt-4 my-3" >
+                        <div class="col-lg-5 col-12">  
+                            <div  style="border: .5px solid rgb(232,232,232);border-bottom:0px!important;">
+                                <div>
+                                    <h5 class="text-center pt-3">Productos</h5>
+                                </div>
+                                <hr>
+                                <!--<div class="container-fluid">
+                                    <div class="text-center py-5">
+                                        <div class="text-muted">
+                                            <i class="fas fa-hand-holding-heart" style="font-size: 100px;color: rgba(255, 0, 0, 0.3);padding-bottom: 0px;"></i>
+                                            <p class="py-3">Aun no tienes productos Favoritos.</p>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="container-fluid">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                        <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100%">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="descripcion-producto pl-3">
+                                                <span>NombreProducto</span><br>
+                                                <small>Lorem ipsum dolor sit amet consectetur.</small>
+                                            </div>
+                                            <div class="precios px-3" style="color: red;">
+                                                <span id="precioActual"> L 100.00</span>
+                                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
+                                            </div>
+                                            <div class="disponibles px-3">
+                                                <span class="text-muted">Disponibles 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="container-fluid">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                        <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="descripcion-producto pl-3">
+                                                <span>NombreProducto</span><br>
+                                                <small>Lorem ipsum dolor sit amet consectetur.</small>
+                                            </div>
+                                            <div class="precios px-3" style="color: red;">
+                                                <span id="precioActual"> L 100.00</span>
+                                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
+                                            </div>
+                                            <div class="disponibles px-3">
+                                                <span class="text-muted">Disponibles 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="container-fluid">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                        <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="descripcion-producto pl-3">
+                                                <span>NombreProducto</span><br>
+                                                <small>Lorem ipsum dolor sit amet consectetur.</small>
+                                            </div>
+                                            <div class="precios px-3" style="color: red;">
+                                                <span id="precioActual"> L 100.00</span>
+                                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
+                                            </div>
+                                            <div class="disponibles px-3">
+                                                <span class="text-muted">Disponibles 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12">
+                            <div  style="border: .5px solid rgb(232,232,232);border-bottom:0px!important;">
+                                <div class=" text-center">
+                                    <h5 class="text-center pt-3">Productos en promoción</h5>
+                                </div>
+                                <hr>
+                                <!--<div class="container-fluid">
+                                    <div class="text-center py-5">
+                                        <div class="text-muted">
+                                            <i class="fas fa-hand-holding-heart" style="font-size: 100px;color: rgba(255, 0, 0, 0.3);padding-bottom: 0px;"></i>
+                                            <p class="py-3">Aun no tienes productos Favoritos.</p>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div class="container-fluid">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                        <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="descripcion-producto pl-3">
+                                                <span>NombreProducto</span><br>
+                                                <small>Lorem ipsum dolor sit amet consectetur.</small>
+                                            </div>
+                                            <div class="precios px-3" style="color: red;">
+                                                <span id="precioActual"> L 100.00</span>
+                                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
+                                            </div>
+                                            <div class="disponibles px-3">
+                                                <span class="text-muted">Disponibles 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="container-fluid">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                        <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="descripcion-producto pl-3">
+                                                <span>NombreProducto</span><br>
+                                                <small>Lorem ipsum dolor sit amet consectetur.</small>
+                                            </div>
+                                            <div class="precios px-3" style="color: red;">
+                                                <span id="precioActual"> L 100.00</span>
+                                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
+                                            </div>
+                                            <div class="disponibles px-3">
+                                                <span class="text-muted">Disponibles 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="container-fluid">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                        <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100%;">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="descripcion-producto pl-3">
+                                                <span>NombreProducto</span><br>
+                                                <small>Lorem ipsum dolor sit amet consectetur.</small>
+                                            </div>
+                                            <div class="precios px-3" style="color: red;">
+                                                <span id="precioActual"> L 100.00</span>
+                                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
+                                            </div>
+                                            <div class="disponibles px-3">
+                                                <span class="text-muted">Disponibles 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center pt-3">
+                    <a href="#" role="button" style="padding: 0%!important;">
+                        <span style="font-size: 3rem;color: rgb(77, 170, 135);"><i class="fas fa-arrow-circle-up"></i></span>
+                    </a>
+                </p>
+            </section>
+            <footer class="sticky-footer">
+                <div style="padding: 5px;color: white;">
+                    <p class="text-center" style="margin-bottom: 0%!important;">Copyright &copy; RA | 2020</p>
+                </div>
+            </footer>
+        </div>
+    
+    
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/controladorEmpresa.js"></script>
+
+    
+    <!-- Modal1 -->
+    <div class="modal fade " id="actualizarFotos" role="dialog">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="index.html">
+                        <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
+                    </a>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <h5>Actualizar Banner</h5>
+                    <div class="container-fluid py-3" style="border: .5px solid rgb(232,232,232);padding: 5px!important;">
+                        <img src="img/destello-del-otono-932.jpg" style="width: 100%; height: 150px;" alt="">
+                    </div>
+                    <div class="form-group my-2">
+                        <label for="exampleFormControlFile1">Añadir o cambiar imagen.</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                    <hr>
+                    <h5>Actualizar Foto Perfil</h5>
+                    <div class="my-3">
+                        <img src="img/icono.png" class="rounded-circle img-thumbnail" style="width: 30%; height: 30%;" alt="">
+                    </div>
+                    <div class="form-group py-2">
+                        <label for="exampleFormControlFile1">Añadir o cambiar imagen de perfil.</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-grad" data-dismiss="modal">Guardar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal2 -->
+    <div class="modal fade " id="cambiarDePlan" role="dialog">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="index.html">
+                        <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
+                    </a>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <h5>Seleccionar nuevo plan.</h5>
+                    <div class="row py-4">
+                        <div class="col-md-4 col-12">
+                            <input id="chk1" name="plan" class="mx-2" type="radio" value="gratis"><label for="chk1"> Gratis
+                            <span>(0$)</span>
+                            </label>
+                        </div>
+                        <div class="col-md-3 col-12">
+                            <input id="chk2" name="plan" class="mx-2" type="radio" value="pro"><label for="chk2"> Pro
+                            <span>(15$)</span>
+                            </label>
+                        </div>
+                        <div class="col-md-5 col-12">
+                            <input id="chk3" name="plan" class="mx-2" type="radio" value="crecimiento"><label for="chk3"> Crecimiento
+                            <span>(24$)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-grad" data-dismiss="modal">Guardar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
