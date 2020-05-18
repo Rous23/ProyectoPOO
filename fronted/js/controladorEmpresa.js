@@ -23,29 +23,23 @@ function verEstadisticas(){
 }
 
 function registrarProducto(){
-  document.getElementById('options').innerHTML = '';
-  document.getElementById('options').innerHTML = `
-  <div class="form-group container" style="max-width: 500px; margin-top: 40px;">
-    <h4 style="padding-bottom: 10px;">Registrar producto</h4>
-    <form id="formulario">
-        <input class="form-control mb-2" placeholder="Nombre" type="text" id="formNombre">
-        <input class="form-control mb-2" placeholder="Descripcion" type="text" id="formDescripcion">
-        <input class="form-control mb-2" placeholder="Precio" type="text" id="formPrecio">
-        <select name="Categorias" id="selectCategoria" class="form-control mb-2">
-            <option value="" selected="true" disabled>Categoria</option>
-            <option value="">Moda Hombre</option>
-            <option value="">Niños</option>
-            <option value="">Hogar</option>
-            <option value="">Tecnologia</option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-        </select>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </form>
-    <button onclick="formularioProductos();" class="btn btn-grad my-2" type="button">Guardar Producto</button>
-</div>
-  `;
+    document.getElementById('options').innerHTML = '';
+    document.getElementById('options').innerHTML = `
+    <div class="form-group container" style="max-width: 500px; margin-top: 40px;">
+        <h4 style="padding-bottom: 10px;">Registrar producto</h4>
+        <form id="formulario">
+            <input class="form-control mb-2" placeholder="Nombre" type="text" id="formNombre">
+            <input class="form-control mb-2" placeholder="Descripcion" type="text" id="formDescripcion">
+            <input class="form-control mb-2" placeholder="Precio" type="text" id="formPrecio">
+            <select name="Categorias" id="selectCategoria" class="form-control mb-2">
+                <option value="" selected="true" disabled>Categoria</option>
+                <option value="">Moda Hombre</option>
+            </select>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
+        </form>
+        <button onclick="formularioProductos();" class="btn btn-grad my-2" type="button">Guardar Producto</button>
+    </div>
+    `;
 }
 function registrarSucursal(){
     document.getElementById('options').innerHTML = '';

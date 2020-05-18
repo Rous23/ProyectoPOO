@@ -671,3 +671,143 @@ console.log(categorias[indice].subCategorias.length);
             <h3>${categorias[indice].subCategorias[i].nombre}</h3></div>
                 ${cardsProducto}
         `;
+
+
+
+
+prpoductos principal
+<div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
+                        <div class="card">
+                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
+                            <div class="card-body">
+                                Precio
+                            </div>
+                            <div class="click-hover" style="border-radius: 5px;">
+                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                                <span>Ver Producto</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 py-4 text-center" style="display: none">
+                        <button class="btn btn-grad px-5" style="border-radius: 20px;">Ver mas</button>
+                    </div>

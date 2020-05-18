@@ -52,7 +52,7 @@ var usuarios=[
 
 var inputs =[
     {input:'email',valido:false},
-    {input:'contraseña',valido:false}
+    {input:'password',valido:false}
 ];
 
 /**/
@@ -80,9 +80,27 @@ function login(){
         }
     }
 
-    if(listo){
+    /*if(listo){
         window.location.href = "categorias.html";
-    }
+    }*/
+    let parametros = $("#form-login").serialize()
+    axios({
+        url:'http://localhost/POO/Proyecto/backend/api/login.php',
+        method:"post",
+        responseType:"json",
+        data:{
+            email:document.getElementById('email').value,
+            password:document.getElementById('password').value
+        }
+    }).then(res=>{
+        console.log(res.data);
+        if(res.data.codigoResultado == 1){
+            window.location.href = "principal.html";
+        }
+        
+    }).catch(err=>{
+        console.error(err);
+    })
 }
 function validarCampoVacio(id){
     let valorCampo = document.getElementById(id).value;
