@@ -9,8 +9,6 @@
         private $pais;
         private $genero;
         private $tarjeta;
-        /*private $empresasFavoritas;
-        private $productosFavoritos;*/
 
         //construcctor
         public function __construct($nombreCompleto,$imgBanner,$imgPerfil,$email,$password,$direccion,$pais,$genero,$tarjeta/*,$empresasFavoritas,$productosFavoritos*/){
@@ -23,8 +21,6 @@
             $this->pais = $pais;
             $this->genero = $genero;
             $this->tarjeta =$tarjeta;
-            /*$this->empresasFavoritas = $empresasFavoritas;
-            $this->productosFavoritos = $productosFavoritos;*/
         }
 
         public function getNombreCompleto(){
@@ -148,12 +144,13 @@
         public function actualizarUsuario($db,$id){
             $result = $db->getReference('clientes')
                 ->getChild($id)
-                ->set($this->getData());
+                ->set($this->getDataActualizar($db,$id));
 
             if($result->getKey() != null)
                 return '{"mensaje":"Registro actualizado", "key":"'.$result->getKey().'"}';
             else
                 return '{"mensaje":"Error al actualizar el registro"}';
+
         }
 
         public static function eliminarUsuario($db,$id){
@@ -163,6 +160,24 @@
             echo '{"mensaje":"Se elimino el elemento '.$id.'"}';
         }
 
+        public function getDataActualizar($db,$id){
+            $resultadoDB = $db->getReference('clientes')
+                ->getChild($id)
+                ->getValue();
+
+            $result['nombreCompleto'] = $this->nombreCompleto;
+            $result['imgBanner'] = $this->imgBanner;
+            $result['imgPerfil'] = $this->imgPerfil;
+            $result['email'] = $this->email;
+            $result['password'] = sha1($this->password);
+            $result['direccion'] = $this->direccion;
+            $result['pais'] = $this->pais;
+            $result['genero'] = $this->genero;
+            $result['tarjeta'] = $this->tarjeta;
+            $result['productosFavs'] = $resultadoDB["productosFavs"];
+            $result['empresasFavs'] = $resultadoDB["empresasFavs"];
+            return $result;
+        }
         public function getData(){
             $result['nombreCompleto'] = $this->nombreCompleto;
             $result['imgBanner'] = $this->imgBanner;
@@ -191,8 +206,6 @@
             }
             setcookie("key","" , time()-1,"/");
             return null;
-            
         }
-        
     }
 ?>

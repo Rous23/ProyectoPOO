@@ -15,7 +15,7 @@
     <div id="navbar-principal">
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid py-2">
-                <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="index.html">
+                <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="principal.html">
                     <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
                 </a>
                 <form class="d-none d-md-inline-block form-inline ml-auto mr-auto my-2 my-md-0 navbar-search" style="align-items: center;">
@@ -29,7 +29,7 @@
                     </div>
                 </form>
                 
-                <ul id="lista-navbar" class="nav-principal">
+                <ul class="nav-principal">
                     <li class="nav-item dropdown text-center no-arrow d-md-none">
                         <a id="search-dropdown" href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                             <i class="fas fa-search fa-fw"  style="color: #67397F;"></i>
@@ -47,12 +47,14 @@
                             </form>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-grad ml-1 my-1 py-1 nav-link" data-toggle="modal" data-target="#exampleModalCenter">Login</button>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-grad ml-1 my-1 py-1 nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Registrarse</button>
-                    </li>
+                    <div id="lista-navbar" class="nav-principal">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-grad ml-1 my-1 py-1 nav-link" data-toggle="modal" data-target="#exampleModalCenter">Login</button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-grad ml-1 my-1 py-1 nav-link" data-toggle="modal" data-target=".bd-example-modal-lg">Registrarse</button>
+                        </li>
+                    </div>
                 </ul>
                 
             </div>
@@ -103,21 +105,8 @@
             <!--/container-->
 
             <div id="productos-principal" class="container-fluid py-4"><!---->
-                <h4 class="px-5">Sugerencias</h4>
-                <div id="card-productos" class="row px-3 pb-5">
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 pb-1 px-1">
-                        <div class="card">
-                            <img src="img/card2.jpg" class="card-img-top" style="padding: 8px;">
-                            <div class="card-body">
-                                Precio
-                            </div>
-                            <div class="click-hover" style="border-radius: 5px;">
-                                <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                                <span>Ver Producto</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h4 class="px-5">Promociones</h4>
+                <div id="card-productos" class="row px-3 pb-5"></div>
             </div>
 
             <p class="text-center pt-3">
@@ -166,50 +155,51 @@
                     </div>
                 </div>
             </div>
+            <!--footer-->
+            <footer style="background: rgb(77, 170, 135);">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-12 text-center">
+                            <div>
+                                <h5 class="pt-4" style="color: white;">Siguenos en nuestras redes sociales</h5>
+                                <div>
+                                    <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-facebook-square" style="color: #65397f; font-size: 3rem;"></i></div>
+                                    <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-twitter-square" style="color: #65397f;font-size: 3rem;"></i></div>
+                                    <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-instagram-square" style="color: #65397f;font-size: 3rem;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12 text-center">
+                            <div style="color: white;">
+                                <h5 class="pt-4" style="color: white;">Servicio al cliente</h5>
+                                <div>
+                                    Puedes contactarte escribiendonos a nuestros numeros de telefono: <br>
+                                    +504 1234-1234 <br>
+                                    +504 1234-1234
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12 text-center">
+                            <div style="color: white;">
+                                <h5 class="pt-4" style="color: white;">Ayuda</h5>
+                                <div>
+                                    Puedes escirbirnos al correo electronico: <br>
+                                    exa@asd.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 5px;color: white;">
+                        <hr>
+                        <p class="text-center">&copy; RA | 2020</p>
+                    </div>
+                </div>
+            </footer>
         </main>
+        
     </div>
-    
-    <!--footer-->
-    <footer style="background: rgb(77, 170, 135);">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4 col-12 text-center">
-                    <div>
-                        <h5 class="pt-4" style="color: white;">Siguenos en nuestras redes sociales</h5>
-                        <div>
-                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-facebook-square" style="color: #65397f; font-size: 3rem;"></i></div>
-                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-twitter-square" style="color: #65397f;font-size: 3rem;"></i></div>
-                            <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-instagram-square" style="color: #65397f;font-size: 3rem;"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12 text-center">
-                    <div style="color: white;">
-                        <h5 class="pt-4" style="color: white;">Servicio al cliente</h5>
-                        <div>
-                            Puedes contactarte escribiendonos a nuestros numeros de telefono: <br>
-                            +504 1234-1234 <br>
-                            +504 1234-1234
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12 text-center">
-                    <div style="color: white;">
-                        <h5 class="pt-4" style="color: white;">Ayuda</h5>
-                        <div>
-                            Puedes escirbirnos al correo electronico: <br>
-                            exa@asd.com
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="padding: 5px;color: white;">
-                <hr>
-                <p class="text-center">&copy; RA | 2020</p>
-            </div>
-        </div>
-    </footer>
+
 
 <!--ventanaModal1-->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -306,6 +296,7 @@
     
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/axios.min.js"></script>
     <script src="js/controladorPrincipal.js"></script>
 </body>
 </html>

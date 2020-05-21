@@ -811,3 +811,9 @@ prpoductos principal
                     <div class="col-12 py-4 text-center" style="display: none">
                         <button class="btn btn-grad px-5" style="border-radius: 20px;">Ver mas</button>
                     </div>
+
+iconos
+<i class="fas fa-star"></i>
+<i class="fas fa-store"></i>
+<i class="fas fa-heart"></i>
+<i class="fas fa-shopping-cart"></i>

@@ -36,8 +36,8 @@
         break;
         case 'GET':
             //echo "Parametro GET " . $_GET['id'];
-            if(isset($_GET['id'])){
-                UsuarioCliente::obtenerUsuario($database->getDb(),$_GET['id']);
+            if(isset($_GET['idCliente'])){
+                UsuarioCliente::obtenerUsuario($database->getDb(),$_GET['idCliente']);
             }else{
                 UsuarioCliente::obtenerUsuarios($database->getDb());
             }
@@ -49,9 +49,9 @@
                 $_PUT["nombreCompleto"],
                 $_PUT["imgBanner"],
                 $_PUT["imgPerfil"],
-                $_PUT["correo"],
-                $_PUT["contraseña"],
-                $_PUT["domicilio"],
+                $_PUT["email"],
+                $_PUT["password"],
+                $_PUT["direccion"],
                 $_PUT["pais"],
                 $_PUT["genero"],
                 array(
@@ -60,10 +60,10 @@
                     'cvv' => $_PUT['cvv']
                 )
             );
-            echo $usuario->actualizarUsuario($database->getDb(),$_GET['id']);
+            echo $usuario->actualizarUsuario($database->getDb(),$_GET['idCliente']);
         break;
         case 'DELETE':
-            UsuarioCliente::eliminarUsuario($database->getDb(),$_GET['id']);
+            UsuarioCliente::eliminarUsuario($database->getDb(),$_GET['idCliente']);
         break;
     }
 ?>

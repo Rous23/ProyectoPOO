@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-fluid py-2">
-            <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="index.html">
+            <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="principal.html">
                 <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
             </a>
             <form class="d-none d-md-inline-block form-inline ml-auto mr-auto my-2 my-md-0 navbar-search" style="align-items: center;">
@@ -63,10 +63,6 @@
                         <div class="text-center">Usuario</div>
                         <hr style="margin-top: .3rem;">
                         <div class="text-center">
-                            <i class="fas fa-cogs" style="color: rgba(144, 142, 143, .8)"></i>
-                            <span>Configuración</span>
-                        </div>
-                        <div class="text-center">
                             <i class="fas fa-sign-out-alt" style="color: rgba(144, 142, 143, .8)"></i>
                             <span>Cerrar Sesion</span>
                         </div>
@@ -89,190 +85,16 @@
             </span>
         </div>
         <div class="container-fluid info-cliente" style="border: .5px solid rgb(232,232,232);margin-top: 10px;">
-            <div class="pt-2">
-                <span style="font-size: 1.3rem;">Rosa Maria Avila Betancourt</span>
-                <hr style="margin-top: .5rem!important;">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="descripcion-cliente px-3">
-                            <div>Correo: rosaavila14.2015@gmail.com</div>
-                            <div>Descripcion: Lorem ipsum dolor sit amet consectetur.</div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="ubicacion px-3">
-                            <div>
-                                Pais: Honduras
-                            </div>
-                            <div>
-                                Domicilio: Col. San jose de la peña
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="text-center pb-3 px-2">
-                    <span><button type="button" class="btn px-3" data-toggle="modal" data-target="#myModal2" style="color: #66397E;border: 1px solid #66397E;border-radius: 0%!important;"><i class="fas fa-users-cog" style="font-size: 1.5rem;"></i> Configuración</button></span>
-                </div>
-            </div>
+            <div id="informacion" class="pt-2"></div>
         </div>
     </section>
     <div class="container">
         <div class="row mt-4 my-3" >
             <div class="col-lg-5 col-12">
-                <div style="border: .5px solid rgb(232,232,232);">  
-                    <div>
-                        <h5 class="text-center pt-3">Productos Favoritos</h5>
-                    </div>
-                    <hr>
-                    <!--<div class="container-fluid">
-                        <div class="text-center py-5">
-                            <div class="text-muted">
-                                <i class="fas fa-hand-holding-heart" style="font-size: 100px;color: rgba(255, 0, 0, 0.3);padding-bottom: 0px;"></i>
-                                <p class="py-3">Aun no tienes productos Favoritos.</p>
-                            </div>
-                        </div>
-                    </div>-->
-                    <div class="container-fluid">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                            <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100px;">
-                            </div>
-                            <div class="col-8">
-                                <div class="descripcion-producto pl-3">
-                                    <span>NombreProducto</span><br>
-                                    <small>Lorem ipsum dolor sit amet consectetur.</small>
-                                </div>
-                                <div class="precios px-3" style="color: red;">
-                                    <span id="precioActual"> L 100.00</span>
-                                    <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
-                                </div>
-                                <div class="disponibles px-3">
-                                    <span class="text-muted">Disponibles 4</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="container-fluid">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                            <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100px;">
-                            </div>
-                            <div class="col-8">
-                                <div class="descripcion-producto pl-3">
-                                    <span>NombreProducto</span><br>
-                                    <small>Lorem ipsum dolor sit amet consectetur.</small>
-                                </div>
-                                <div class="precios px-3" style="color: red;">
-                                    <span id="precioActual"> L 100.00</span>
-                                    <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
-                                </div>
-                                <div class="disponibles px-3">
-                                    <span class="text-muted">Disponibles 4</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="container-fluid">
-                        <div class="row no-gutters">
-                            <div class="col-4">
-                            <img src="img/niños.jpg" class="card-img img-thumbnail" style="width: 100%; height: 100px;">
-                            </div>
-                            <div class="col-8">
-                                <div class="descripcion-producto pl-3">
-                                    <span>NombreProducto</span><br>
-                                    <small>Lorem ipsum dolor sit amet consectetur.</small>
-                                </div>
-                                <div class="precios px-3" style="color: red;">
-                                    <span id="precioActual"> L 100.00</span>
-                                    <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L 200.00</span>
-                                </div>
-                                <div class="disponibles px-3">
-                                    <span class="text-muted">Disponibles 4</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                </div>  
+                <div id="prod-favoritos" style="border: .5px solid rgb(232,232,232);"></div>  
             </div>
             <div class="col-lg-7 col-12 text-center">
-                <div style="border: .5px solid rgb(232,232,232);"> 
-                    <div>
-                        <h5 class="pt-3">Tiendas Favoritas</h5>
-                    </div>
-                    <hr>
-                    <!--
-                    <div class="container-fluid">
-                        <div class="text-center py-5">
-                            <div class="text-muted">
-                                <i class="fas fa-heart" style="font-size: 100px;color: rgba(255, 0, 0, 0.575);padding-bottom: 0px;"></i>
-                                <i class="far fa-heart" style="font-size: 100px;color: rgba(255, 0, 0, 0.3);padding-bottom: 0px;"></i>
-                                <p class="py-3">Aun no tienes Tiendas Favoritas.</p>
-                            </div>
-                        </div>
-                    </div>-->
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-6 pb-2">
-                                <div class="card-tienda p-2">
-                                    <img src="img/deporte.jpg" class="rounded-circle img-thumbnail" style="max-width: 60px"> 
-                                    <h6 style="display:block">NombreTienda</h6>
-                                    <hr>
-                                    <div id="descripcion-tienda">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                                    <button class="btn btn-grad my-3">Ir a la tienda</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-6 pb-2">
-                                <div class="card-tienda p-2">
-                                    <img src="img/deporte.jpg" class="rounded-circle img-thumbnail" style="max-width: 60px"> 
-                                    <h6 style="display:block">NombreTienda</h6>
-                                    <hr>
-                                    <div id="descripcion-tienda">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                                    <button class="btn btn-grad my-3">Ir a la tienda</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-6 pb-2">
-                                <div class="card-tienda p-2">
-                                    <img src="img/deporte.jpg" class="rounded-circle img-thumbnail" style="max-width: 60px"> 
-                                    <h6 style="display:block">NombreTienda</h6>
-                                    <hr>
-                                    <div id="descripcion-tienda">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                                    <button class="btn btn-grad my-3">Ir a la tienda</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-6 pb-2">
-                                <div class="card-tienda p-2">
-                                    <img src="img/deporte.jpg" class="rounded-circle img-thumbnail" style="max-width: 60px"> 
-                                    <h6 style="display:block">NombreTienda</h6>
-                                    <hr>
-                                    <div id="descripcion-tienda">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                                    <button class="btn btn-grad my-3">Ir a la tienda</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-6 pb-2">
-                                <div class="card-tienda p-2">
-                                    <img src="img/deporte.jpg" class="rounded-circle img-thumbnail" style="max-width: 60px"> 
-                                    <h6 style="display:block">NombreTienda</h6>
-                                    <hr>
-                                    <div id="descripcion-tienda">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                                    <button class="btn btn-grad my-3">Ir a la tienda</button>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-6 pb-2">
-                                <div class="card-tienda p-2">
-                                    <img src="img/deporte.jpg" class="rounded-circle img-thumbnail" style="max-width: 60px"> 
-                                    <h6 style="display:block">NombreTienda</h6>
-                                    <hr>
-                                    <div id="descripcion-tienda">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-                                    <button class="btn btn-grad my-3">Ir a la tienda</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div id="empresas-favoritas" style="border: .5px solid rgb(232,232,232);"></div>
             </div>
         </div>
     </div>
@@ -282,8 +104,8 @@
             <span style="font-size: 3rem;color: rgb(77, 170, 135);"><i class="fas fa-arrow-circle-up"></i></span>
         </a>
     </p>
-    <footer class="sticky-footer">
-        <div style="padding: 5px;color: white;">
+    <footer style="width: 100%;text-align: center;position: absolute;bottom: 0;left: 0;">
+        <div style="color: white;">
             <p class="text-center" style="margin-bottom: 0%!important;">Copyright &copy; RA | 2020</p>
         </div>
     </footer>
@@ -356,13 +178,9 @@
                         <div class="col-12">
                             <h5>Inicio y Seguridad</h5>
                         </div>
-                        <div class="col-md-6 col-12">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre">
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" class="form-control" id="apellido">
+                        <div class="col-12">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombreCompleto">
                         </div>
                         <div class="col-12">
                             <label for="email">Email</label>
@@ -413,16 +231,17 @@
                 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-grad" data-dismiss="modal">Guardar</button>
+                <button onclick="actualizarCliente()" type="button" class="btn btn-grad" data-dismiss="modal">Guardar</button>
             </div>
         </div>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
+    <!---->
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/controladorUsuario.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/controladorClientes.js"></script>
     
     
 </body>

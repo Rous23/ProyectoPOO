@@ -94,10 +94,13 @@ function login(){
         }
     }).then(res=>{
         console.log(res.data);
-        if(res.data.codigoResultado == 1){
+        if(res.data.codigoResultado == "cliente"){
             window.location.href = "principal.html";
+        }else if(res.data.codigoResultado == "empresa"){
+            window.location.href = "dashboard.html";
+        }else{
+            console.log(res.data);
         }
-        
     }).catch(err=>{
         console.error(err);
     })

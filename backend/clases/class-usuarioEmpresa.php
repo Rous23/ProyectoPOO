@@ -4,7 +4,7 @@
                 private $imgPerfil;
                 private $imgBanner;
                 private $email;
-                private $contraseña;
+                private $password;
                 private $genero;
                 private $pais;
                 private $direccion;
@@ -15,12 +15,12 @@
                 private $descripcion;
 
 
-        public function __construct($nombreEmpresa,$imgPerfil,$imgBanner,$email,$contraseña,$genero,$pais,$direccion,$latitud,$longitud,$tarjeta,$redes,$descripcion){
+        public function __construct($nombreEmpresa,$imgPerfil,$imgBanner,$email,$password,$genero,$pais,$direccion,$latitud,$longitud,$tarjeta,$redes,$descripcion){
                 $this->nombreEmpresa = $nombreEmpresa;
                 $this->imgPerfil = $imgPerfil;
                 $this->imgBanner = $imgBanner;
                 $this->email = $email;
-                $this->contraseña = $contraseña;
+                $this->password = $password;
                 $this->genero = $genero;
                 $this->pais = $pais;
                 $this->direccion = $direccion;
@@ -70,6 +70,21 @@
                         return '{"mensaje":"Error al actualizar el registro"}';
         }
 
+        public static function verificarUsuario($db,$email,$password){
+                $passwordSha1 = sha1($password);
+                $result = $db->getReference('empresas')
+                        ->getValue();
+                foreach ($result as $key => $value) {
+                        # code...
+                        if($result[$key]["email"] == $email && $result[$key]["password"] == $password){
+                        setcookie("key",$key , time()+(60*60*24*31),"/");
+                        return $result[$key];
+                        }
+                }
+                setcookie("key","" , time()-1,"/");
+                return null;
+        }
+
         public static function eliminarUsuario(){}
 
         public function getDataActualizar($db,$id){
@@ -81,7 +96,7 @@
                 $result['imgBanner'] = $this->imgPerfil;
                 $result['imgPerfil'] = $this->imgBanner;
                 $result['email'] = $this->email;
-                $result['contraseña'] = $this->contraseña;
+                $result['password'] = $this->password;
                 $result['genero'] = $this->genero;
                 $result['direccion'] = $this->direccion;
                 $result['pais'] = $this->pais;
@@ -91,6 +106,8 @@
                 $result['redes'] = $this->redes;
                 $result['descripcion'] = $this->descripcion;
                 $result['sucursales'] = $resultadoDB["sucursales"];
+                $result['productos'] = $resultadoDB["productos"];
+                $result['promociones'] = $resultadoDB["promociones"];
                 return $result;
         }
 
@@ -99,7 +116,7 @@
                 $result['imgBanner'] = $this->imgPerfil;
                 $result['imgPerfil'] = $this->imgBanner;
                 $result['email'] = $this->email;
-                $result['contraseña'] = $this->contraseña;
+                $result['password'] = $this->password;
                 $result['genero'] = $this->genero;
                 $result['direccion'] = $this->direccion;
                 $result['pais'] = $this->pais;
@@ -160,14 +177,14 @@
                 return $this;
         }
 
-        public function getContraseña()
+        public function getPassword()
         {
-                return $this->contraseña;
+                return $this->password;
         }
 
-        public function setContraseña($contraseña)
+        public function setPassword($password)
         {
-                $this->contraseña = $contraseña;
+                $this->password = $password;
 
                 return $this;
         }
