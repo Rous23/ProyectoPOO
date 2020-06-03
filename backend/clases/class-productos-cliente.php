@@ -1,23 +1,29 @@
 <?php
     class ProductoFavorito{
-        private $nombreProducto;
-        private $imgProducto;
-        private $descripcion;
-        private $precioNormal;
-        private $precioPromocion;
-        private $porcentajeDescuento;
-        private $fechaEfectividad;
-        private $sucursalesPromocion;
+        public $nombreProducto;
+        public $imgProducto;
+        public $descripcion;
+        public $precioNormal;
+        public $precioPromocion;
+        public $porcentajeDescuento;
+        public $idEmpresa;
+        public $idProducto;
+        //public $idPCat;
+        //public $idCategoria;
+        //private $sucursalesPromocion;
 
-        public function __construct($nombreProducto,$imgProducto,$descripcion,$precioNormal,$precioPromocion,$porcentajeDescuento,$fechaEfectividad,$sucursalesPromocion){
+        public function __construct($nombreProducto,$imgProducto,$descripcion,$precioNormal,$precioPromocion,$porcentajeDescuento,$idEmpresa,$idProducto/*,$idPCat,$idCategoria,$sucursalesPromocion*/){
             $this->nombreProducto = $nombreProducto;
             $this->imgProducto = $imgProducto;
             $this->descripcion = $descripcion;
             $this->precioNormal = $precioNormal;
             $this->precioPromocion = $precioPromocion;
             $this->porcentajeDescuento = $porcentajeDescuento;
-            $this->fechaEfectividad = $fechaEfectividad;
-            $this->sucursalesPromocion = $sucursalesPromocion;
+            $this->idEmpresa = $idEmpresa;
+            $this->idProducto = $idProducto;
+            //$this->idPCat = $idPCat;
+            //$this->idCategoria = $idCategoria;
+            //$this->sucursalesPromocion = $sucursalesPromocion;
         }
 
         function guardarProductoFav($db,$idCliente){
@@ -27,16 +33,18 @@
                 ->push($producto);
             
             if($result->getKey() != null)
-                return '{"mensaje":"Producto Guardada", "key":"'.$result->getKey().'"}';
+                return '{"mensaje":"Producto Guardado", "key":"'.$result->getKey().'"}';
             else
                 return '{"mensaje":"Error al guardar."}';
         }
 
-        public static function obtenerProductoFav($db,$idProducto){
-            $result = $db->getReference('categorias')  
+        public static function obtenerProductoFav($db,$idProducto,$idCliente){
+            $nodoReferencia = "clientes/".$idCliente."/productosFavs";
+            $result = $db->getReference($nodoReferencia)  
+                ->getChild($idProducto)
                 ->getValue();
-
-            foreach ($result as $key => $value) {
+            echo json_encode($result);
+            /*foreach ($result as $key => $value){
                 if(isset($result[$key]['productos'])){
                     $objeto = $result[$key]["productos"];
                     foreach ($objeto as $key => $value) {
@@ -45,7 +53,15 @@
                         }
                     }
                 }
-            }
+            }*/
+        }
+
+        public static function obtenerProductosFav($db,$idCliente){
+            $nodoReferencia = "clientes/".$idCliente."/productosFavs";
+            $result = $db->getReference($nodoReferencia)
+                ->getValue();
+            echo json_encode($result);
+            
         }
 
         public function getData(){
@@ -55,8 +71,11 @@
             $result['precioNormal'] = $this->precioNormal;
             $result['precioPromocion'] = $this->precioPromocion;
             $result['porcentajeDescuento'] = $this->porcentajeDescuento;
-            $result['fechaEfectividad'] = $this->fechaEfectividad;
-            $result['sucursalesPromocion'] = $this->sucursalesPromocion;
+            $result['idEmpresa'] = $this->idEmpresa;
+            $result['idProducto'] = $this->idProducto;
+            //$result['$idPCat']= $this->idPCat;
+            //$result['$idCategoria']= $this->idCategoria;
+            //$result['sucursalesPromocion'] = $this->sucursalesPromocion;
             return $result;
         }
     }

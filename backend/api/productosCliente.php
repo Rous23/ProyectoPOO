@@ -4,7 +4,7 @@
     require_once("../clases/class-database.php");
     
     $database = new Database();
-
+    $_POST = json_decode(file_get_contents('php://input'),true);
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST':
             $productoFav = new ProductoFavorito(
@@ -14,20 +14,23 @@
                 $_POST["precioNormal"],
                 $_POST["precioPromocion"],
                 $_POST["porcentajeDescuento"],
-                $_POST["fechaEfectividad"],
+                $_POST["idEmpresa"],
+                $_POST["idProducto"],
+                /*$_POST['idPCat'],
+                $_POST['idCategoria']
                 array(
                     'nombre' => $_POST['nombre'],
                     'ubicacion' => $_POST['ubicacion'],
-                )
+                )*/
             );
             echo $productoFav->guardarProductoFav($database->getDb(),$_GET['idCliente']);
         break;
         case 'GET':
             //echo "Parametro GET " . $_GET['id'];
             if(isset($_GET['idProducto'])){
-                ProductoFavorito::obtenerProductoFav($database->getDb(),$_GET['idProducto']);
+                ProductoFavorito::obtenerProductoFav($database->getDb(),$_GET['idProducto'],$_GET['idCliente']);
             }else{
-                ProductoFavorito::obtenerProductosFav($database->getDb());
+                ProductoFavorito::obtenerProductosFav($database->getDb(),$_GET['idCliente']);
             }
         break;
         case 'DELETE':

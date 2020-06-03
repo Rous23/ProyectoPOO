@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luxuary</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="fontawesome-free-5.12.1-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo1.png">
+</head>
+<body id="body-principal" class="principal-background">
+    <div id="navbar-principal">
+        <nav class="navbar navbar-expand-md navbar-light bg-light  fixed-top">
+            <div class="container-fluid py-2">
+                <a style="color:#67397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="principal.html">
+                    <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
+                </a>
+                <form class="d-none d-md-inline-block form-inline ml-auto mr-auto my-2 my-md-0 navbar-search" style="align-items: center;">
+                    <div class="input-group my-2">
+                        <input id="search-input1" class="form-control" type="text" placeholder="Buscar" aria-label="Search">
+                        <div class="input-group-append">
+                            <button onclick="buscar()" class="btn btn-grad my-sm-0" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                
+                <ul class="nav-principal">
+                    <li class="nav-item dropdown text-center no-arrow d-md-none">
+                        <a id="search-dropdown" href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                            <i class="fas fa-search fa-fw"  style="color: #67397F;"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="searchDropdown">
+                            <form class="form-inline my-2 px-2" style="align-items: center;">
+                                <div class="input-group">
+                                    <input id="search-input" class="form-control" type="text" placeholder="Buscar" aria-label="Search" style="width: 200px!important;">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-grad my-sm-0" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <div id="lista-navbar" class="nav-principal"></div>
+                </ul>
+                
+            </div>
+        </nav>
+    </div>
+    <!-------->
+    <div id="main-box" class="wrapper">
+        <main role="main" class="starter-template">
+            <div id="carouselExampleCaptions" class="carousel slide container-carousel pb-3" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/carosel/e5.jpg" style="height: 380px; width: 100%; align-content: center;" class="img-thumbnail img-carousel">
+                        <div class="carousel-caption d-none d-md-block">
+                            <strong><p style="font-size: 90px;">Bienvenido</p></strong>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/carosel/e2.jpg" style="height: 380px; width: 100%; align-content: center;" class="img-thumbnail img-carousel">
+                        <div class="carousel-caption d-none d-md-block">
+                            <strong><p style="font-size: 80px;">Disfruta de los mejores productos a bajos precios.</p></strong>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div style="background-color: rgba(0, 0, 0, .6);">
+                            <img src="img/carosel/p2.jpg" style="height: 380px; width: 100%; align-content: center;" class="img-thumbnail img-carousel">
+                        </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <strong><p style="font-size: 90px;">Tenemos lo mejor para ti.</p></strong> 
+                        </div>
+                        
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+            <!--/container-fluid-categorias-->
+            <div id="categorias-principal" class="container-fluid text-center my-4">
+                <div class="container-fluid" style="border: 1px solid rgba(0,0,0,.1);">
+                    <h5 class="pt-3">Categorias</h5>
+                    <hr> 
+                    <div id="card-categorias" class="row"></div>
+                </div>
+            </div>
+            <!--/container-->
+
+            <div id="productos-principal" class="container-fluid py-4"><!---->
+                <h4 class="px-5">Promociones</h4>
+                <div id="card-productos" class="row px-3 pb-5"></div>
+            </div>
+
+            <p class="text-center pt-3">
+                <a href="#" role="button" style="padding: 0%!important;">
+                    <span style="font-size: 4rem;color: rgb(77, 170, 135);"><i class="fas fa-arrow-circle-up"></i></span>
+                </a>
+            </p>
+        
+            <div class="px-5" style="background: white;">
+                <div id="info-tienda" class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card">
+                            <span style="font-size: 5rem; color: #65397f;text-align: center;">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </span>
+                            <h5 class=" mx-3" style="box-sizing: border-box;text-align: center;">Promociones</h5>
+                            <p class="mt-1 mx-3" style="box-sizing: border-box;text-align: center;">Precios muy competitivos en más de 100 millones de artículos.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card">
+                            <span style="font-size: 5rem; color: #65397f;text-align: center;">
+                                <i class="fas fa-credit-card"></i>
+                            </span>
+                            <h5 class="mx-3" style="box-sizing: border-box;text-align: center;">Pagos Seguros</h5>
+                            <p class="mt-1 mx-3" style="box-sizing: border-box;text-align: center;">Paga con los métodos más populares y más seguros para ti.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card">
+                            <span style="font-size: 5rem; color: #65397f;text-align: center;">
+                                <i class="fas fa-shopping-basket"></i>
+                            </span>
+                            <h5 class="mx-3" style="box-sizing: border-box;text-align: center;">Compra Segura</h5>
+                            <p class="mt-1 mx-3" style="box-sizing: border-box;text-align: center;">Nuestra Protección del Comprador protege tu compra.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="card">
+                            <span style="font-size: 5rem; color: #65397f;text-align: center;">
+                                <i class="fas fa-user-friends"></i>
+                            </span>
+                            <h5 class="mx-3" style="box-sizing: border-box;text-align: center;">Asistencia</h5>
+                            <p class="mt-1 mx-3" style="box-sizing: border-box;text-align: center;">Asistencia continua las 24 horas para que compres sin problemas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--footer-->
+            <footer style="background: rgb(77, 170, 135);">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-12 text-center">
+                            <div>
+                                <h5 class="pt-4" style="color: white;">Siguenos en nuestras redes sociales</h5>
+                                <div>
+                                    <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-facebook-square" style="color: #65397f; font-size: 3rem;"></i></div>
+                                    <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-twitter-square" style="color: #65397f;font-size: 3rem;"></i></div>
+                                    <div style="display: inline-block; padding: 15px; cursor: pointer;"><i class="fab fa-instagram-square" style="color: #65397f;font-size: 3rem;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12 text-center">
+                            <div style="color: white;">
+                                <h5 class="pt-4" style="color: white;">Servicio al cliente</h5>
+                                <div>
+                                    Puedes contactarte escribiendonos a nuestros numeros de telefono: <br>
+                                    +504 1234-1234 <br>
+                                    +504 1234-1234
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-12 text-center">
+                            <div style="color: white;">
+                                <h5 class="pt-4" style="color: white;">Ayuda</h5>
+                                <div>
+                                    Puedes escirbirnos al correo electronico: <br>
+                                    exa@asd.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 5px;color: white;">
+                        <hr>
+                        <p class="text-center">&copy; RA | 2020</p>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        
+    </div>
+
+
+<!--ventanaModal1-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <a style="color:#65397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="principal.html">
+                            <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
+                        </a>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="px-5">
+                        <h5 class="py-4" style="text-align: center;">Iniciar Sesion</h5>
+                        <form id="form-login">
+                            <div class="form-group">
+                                <label for="email" class="col-form-label">Correo/Usuario</label>
+                                <input type="email" class="form-control" name="email" id="email" value="">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-form-label">Contraseña</label>
+                                <input type="password" class="form-control" name="password" id="password" value="">
+                            </div>
+                            <div class="row">
+                                    <div class="col-6 mb-4">
+                                        <input class="form-input-checkbox" type="checkbox" id="recordar">
+                                        <label for="recordar">Recordarme</label>
+                                    </div>
+                                    <div class="col-6 mb-4">
+                                        <a href="#">¿Aun no tienes cuenta?</a>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center my-3">
+                                    <button onclick="login();" class="btn btn-grad px-4 py-2" style="color: white;" type="button">Iniciar Sesión</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--VentanaModal2-->
+<!-- Extra large modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 1px solid white;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <span><img src="img/logo1.png" style="width:4rem; height:4rem;"></span>
+                        <h3 style="color:#65397F; font-family: 'Lobster', cursive;" >
+                            Luxuary
+                        </h3>
+                        
+                        <p>¡Un mundo lleno de promociones!</p>
+                    </div>
+                    <div class="container px-4">
+                        <div class="row py-2 mx-3" style="margin:auto;">
+                            <div class="col-lg-6 col-12 py-4">
+                                <div class="cards px-3 text-center" style="box-sizing: border-box;">
+                                    <img src="img/cards1.jpg" class="card-img-top">
+                                    <div class="card-footer pb-3 mb-4" style="background: #65397f;">
+                                        <a style="color:white;"  href="registrarse-cliente.html" class="card-text" >Registrarte como Cliente</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 py-4">
+                                <div class="cards px-3 text-center" style="box-sizing: border-box;">
+                                    <img src="img/cards2.jpg" class="card-img-top">
+                                    <div class="card-footer pb-3 mb-4" style="background: rgb(101, 57, 127);">
+                                        <a style="color:white;" href="registrarse-empresa.html" class="card-text">Registrarte como Empresa
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-sm" id="guardado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div id="mensajeRespuesta" class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+    <div class="modal fade bd-example-modal-lg" id="mostrarTienda" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Informacion de la Tienda</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="imagenes">
+                    <div id="contenedorImagenes" class="imagenes">
+                        
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div id="informacion" class="text-center" style="border: .5px solid rgb(232,232,232);"></div>
+                    <div id="promo" class="mt-3 pt-2" style="border: .5px solid rgb(232,232,232);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="js/controladorPrincipal.js"></script>
+</body>
+</html>

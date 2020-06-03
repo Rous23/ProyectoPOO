@@ -23,9 +23,9 @@
                 ->push($producto);
 
             if($result->getKey() != null)
-                return '{"mensaje":"Producto Guardado", "key":"'.$result->getKey().'"}';
+                return '{"codigo": 1, "mensaje":"Producto guardado, ingrese nuevos datos para guardar nuevo producto.", "key":"'.$result->getKey().'"}';
             else
-                return '{"mensaje":"Error al guardar."}';
+                return '{"codigo": 0, "mensaje":"Error al guardar el producto."}';
         }
 
         public static function obtenerProducto($db,$idEmpresa,$idProducto){

@@ -4,12 +4,14 @@
     require_once("../clases/class-database.php");
     
     $database = new Database();
-    //$_POST = json_decode(file_get_contents('php://input'),true);
 
     switch($_SERVER['REQUEST_METHOD']){
         case 'GET':
             //echo "Parametro GET " . $_GET['id'];
-            if(isset($_GET['idCategoria'])){
+            
+            if(isset($_GET['idProducto'])){/*,$_GET['idCategoria']*/ /*&& isset($_GET['idCategoria'])*/
+                Categoria::obtenerProductoCategoria($database->getDb(),$_GET['idProducto']);
+            }else if(isset($_GET['idCategoria'])){
                 Categoria::obtenerCategoria($database->getDb(),$_GET['idCategoria']);
             }else{
                 Categoria::obtenerCategorias($database->getDb());

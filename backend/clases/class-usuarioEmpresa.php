@@ -1,46 +1,71 @@
 <?php
         class UsuarioEmpresa{
                 private $nombreEmpresa;
-                private $imgPerfil;
                 private $imgBanner;
+                private $imgPerfil;
                 private $email;
                 private $password;
-                private $genero;
-                private $pais;
+                private $descripcion;
                 private $direccion;
+                private $genero;
+                private $redes;
                 private $latitud;
                 private $longitud;
+                private $pais;
                 private $tarjeta;
-                private $redes;
-                private $descripcion;
+                private $plan;
+                
+                
 
 
-        public function __construct($nombreEmpresa,$imgPerfil,$imgBanner,$email,$password,$genero,$pais,$direccion,$latitud,$longitud,$tarjeta,$redes,$descripcion){
+        public function __construct($nombreEmpresa,$imgBanner,$imgPerfil,$email,$password,$descripcion,$direccion,$genero,$redes,$latitud,$longitud,$pais,$tarjeta,$plan){
                 $this->nombreEmpresa = $nombreEmpresa;
-                $this->imgPerfil = $imgPerfil;
                 $this->imgBanner = $imgBanner;
+                $this->imgPerfil = $imgPerfil;
                 $this->email = $email;
                 $this->password = $password;
-                $this->genero = $genero;
-                $this->pais = $pais;
+                $this->descripcion = $descripcion;
                 $this->direccion = $direccion;
+                $this->genero = $genero;
+                $this->redes = $redes;
                 $this->latitud = $latitud;
                 $this->longitud = $longitud;
+                $this->pais = $pais;
                 $this->tarjeta = $tarjeta;
-                $this->redes = $redes;
-                $this->descripcion = $descripcion;
+                $this->plan = $plan;
         }
 
         public function guardarUsuario($db){
                 $usuario = $this->getData();
-
                 $result = $db->getReference('empresas')
-                ->push($usuario);
+                        ->getSnapshot()
+                        ->getValue();
+                foreach($result as $key => $value){
+                        if($result[$key]["email"] == $this->email){
+                        return '{"mensaje":"El correo ya existe.", "codigo": 0}';
+                        }
+                }
+                $result = $db->getReference('empresas')
+                        ->push($usuario);
                 
-                if($result->getKey() != null)
-                return '{"mensaje":"Registro almacenado", "key":"'.$result->getKey().'"}';
-                else
-                return '{"mensaje":"Error al guardar el registro"}';
+                $resultAdmi = $db->getReference('Admi')
+                        ->push($this->guardarEmpresaAdmin());
+                
+
+                if($result->getKey() != null){
+                        $arreglo = array(
+                        "mensaje" => "usuario Autenticado",
+                        "codigo" => "1",
+                        "token" => sha1(uniqid(rand(),true)),
+                        "nombreEmpresa" => $this->nombreEmpresa
+                        );
+                        session_start();
+                        $_SESSION["token"] = $arreglo["token"];
+                        setcookie("token",$arreglo["token"] , time()+(60*60*24*31),"/");
+                        setcookie("nombreEmpresa",$arreglo["nombreEmpresa"] , time()+(60*60*24*31),"/");
+                        setcookie("keyEmpresa",$result->getKey(), time()+(60*60*24*31),"/");
+                        return json_encode($arreglo);
+                }
         }
 
         public static function obtenerUsuario($db,$id){
@@ -62,12 +87,9 @@
         public function actualizarUsuario($db,$id){
                 $result = $db->getReference('empresas')
                 ->getChild($id)
-                ->set($this->getDataActualizar($db,$id));
-
-                if($result->getKey() != null)
-                        return '{"mensaje":"Registro actualizado", "key":"'.$result->getKey().'"}';
-                else
-                        return '{"mensaje":"Error al actualizar el registro"}';
+                ->set($this->getDataActualizar($db,$id))
+                ->getValue();
+                echo json_encode($result);
         }
 
         public static function verificarUsuario($db,$email,$password){
@@ -77,15 +99,22 @@
                 foreach ($result as $key => $value) {
                         # code...
                         if($result[$key]["email"] == $email && $result[$key]["password"] == $password){
-                        setcookie("key",$key , time()+(60*60*24*31),"/");
+                        setcookie("keyEmpresa",$key , time()+(60*60*24*31),"/");
                         return $result[$key];
                         }
                 }
-                setcookie("key","" , time()-1,"/");
+                setcookie("keyEmpresa","" , time()-1,"/");
                 return null;
         }
 
         public static function eliminarUsuario(){}
+
+        public function guardarEmpresaAdmin(){
+                $result['nombreEmpresa'] = $this->nombreEmpresa;
+                $result['email'] = $this->email;
+                $result['plan'] = $this->plan;
+                return $result;
+        }
 
         public function getDataActualizar($db,$id){
                 $resultadoDB = $db->getReference('empresas')
@@ -93,39 +122,46 @@
                 ->getValue();
 
                 $result['nombreEmpresa'] = $this->nombreEmpresa;
-                $result['imgBanner'] = $this->imgPerfil;
-                $result['imgPerfil'] = $this->imgBanner;
+                $result['imgBanner'] = $this->imgBanner;
+                $result['imgPerfil'] = $this->imgPerfil;
                 $result['email'] = $this->email;
                 $result['password'] = $this->password;
-                $result['genero'] = $this->genero;
+                $result['descripcion'] = $this->descripcion;
                 $result['direccion'] = $this->direccion;
-                $result['pais'] = $this->pais;
+                $result['genero'] = $this->genero;
+                $result['redes'] = $this->redes;
                 $result['latitud'] = $this->latitud;
                 $result['longitud'] = $this->longitud;
+                $result['pais'] = $this->pais;
                 $result['tarjeta'] = $this->tarjeta;
-                $result['redes'] = $this->redes;
-                $result['descripcion'] = $this->descripcion;
-                $result['sucursales'] = $resultadoDB["sucursales"];
-                $result['productos'] = $resultadoDB["productos"];
-                $result['promociones'] = $resultadoDB["promociones"];
+                $result['plan'] = $this->plan;
+                if(isset($resultadoDB["sucursales"])){
+                        $result['sucursales'] = $resultadoDB["sucursales"];
+                }
+                if(isset($resultadoDB["productos"])){
+                        $result['productos'] = $resultadoDB["productos"];
+                }
+                if(isset($resultadoDB["promociones"])){
+                        $result['promociones'] = $resultadoDB["promociones"];
+                }
                 return $result;
         }
 
         public function getData(){
                 $result['nombreEmpresa'] = $this->nombreEmpresa;
-                $result['imgBanner'] = $this->imgPerfil;
-                $result['imgPerfil'] = $this->imgBanner;
+                $result['imgBanner'] = $this->imgBanner;
+                $result['imgPerfil'] = $this->imgPerfil;
                 $result['email'] = $this->email;
                 $result['password'] = $this->password;
-                $result['genero'] = $this->genero;
+                $result['descripcion'] = $this->descripcion;
                 $result['direccion'] = $this->direccion;
-                $result['pais'] = $this->pais;
+                $result['genero'] = $this->genero;
+                $result['redes'] = $this->redes;
                 $result['latitud'] = $this->latitud;
                 $result['longitud'] = $this->longitud;
+                $result['pais'] = $this->pais;
                 $result['tarjeta'] = $this->tarjeta;
-                $result['redes'] = $this->redes;
-                $result['descripcion'] = $this->descripcion;
-                
+                $result['plan'] = $this->plan;
                 return $result;
         }
 
@@ -280,6 +316,17 @@
         public function setDescripcion($descripcion)
         {
                 $this->descripcion = $descripcion;
+
+                return $this;
+        }
+
+        public function getPlan()
+        {
+                return $this->plan;
+        }
+        public function setPlan($plan)
+        {
+                $this->plan = $plan;
 
                 return $this;
         }

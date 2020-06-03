@@ -3,15 +3,18 @@ include_once("../clases/class-productos.php");
     class Promocion extends Producto{
         protected $precioPromocion;
         protected $porcentajeDescuento;
-        protected $fechaEfectividad;
-        protected $sucursalesPromocion;
+        protected $fechaInicio;
+        protected $fechaFin;
+        protected $sucursales;
         
-        public function __construct($nombreProducto,$imgProducto,$descripcion,$precioNormal,$idCategoria,$precioPromocion,$porcentajeDescuento,$fechaEfectividad,$sucursalesPromocion){
+        public function __construct($nombreProducto,$imgProducto,$descripcion,$precioNormal,$idCategoria,$precioPromocion,$porcentajeDescuento,$fechaInicio,
+        $fechaFin,$sucursales){
             parent::__construct($nombreProducto,$imgProducto,$descripcion,$precioNormal,$idCategoria);
             $this->precioPromocion = $precioPromocion;
             $this->porcentajeDescuento = $porcentajeDescuento;
-            $this->fechaEfectividad = $fechaEfectividad;
-            $this->sucursalesPromocion = $sucursalesPromocion;
+            $this->fechaInicio = $fechaInicio;
+            $this->fechaFin = $fechaFin;
+            $this->sucursales = $sucursales;
         }
 
         public function guardarPromocion($db,$idEmpresa){
@@ -29,17 +32,18 @@ include_once("../clases/class-productos.php");
             $promo['idCategoria'] = $this->idCategoria;//cuidado
             $promo['precioPromocion'] = $this->precioPromocion;
             $promo['porcentajeDescuento'] = $this->porcentajeDescuento;
-            $promo['fechaEfectividad'] = $this->fechaEfectividad;
-            $promo['sucursalesPromocion'] = $this->sucursalesPromocion;
+            $promo['fechaInicio'] = $this->fechaInicio;
+            $promo['fechaFin'] = $this->fechaFin;
+            $promo['sucursales'] = $this->sucursales;
 
             $referencia = "categorias/".$this->getIdCategoria()."/productos";
             $prom = $db->getReference($referencia)
                 ->push($promo);
             
             if($result->getKey() != null)
-                return '{"mensaje":"Promocion Guardada", "key":"'.$result->getKey().'"}';
+                return '{"codigo": 1, "mensaje":"Promocion Guardada", "key":"'.$result->getKey().'"}';
             else
-                return '{"mensaje":"Error al guardar."}';
+                return '{"codigo": 0, "mensaje":"Error al guardar."}';
 
         }
 
@@ -98,8 +102,9 @@ include_once("../clases/class-productos.php");
             $result['idCategoria'] = $this->idCategoria;
             $result['precioPromocion'] = $this->precioPromocion;
             $result['porcentajeDescuento'] = $this->porcentajeDescuento;
-            $result['fechaEfectividad'] = $this->fechaEfectividad;
-            $result['sucursalesPromocion'] = $this->sucursalesPromocion;
+            $result['fechaInicio'] = $this->fechaInicio;
+            $result['fechaFin'] = $this->fechaFin;
+            $result['sucursales'] = $this->sucursales;
             return $result;
         }
 
@@ -119,19 +124,27 @@ include_once("../clases/class-productos.php");
             return $this;
         }
  
-        public function getFechaEfectividad(){
-            return $this->fechaEfectividad;
+        public function getFechaInicio(){
+            return $this->fechaInicio;
         }
-        public function setFechaEfectividad($fechaEfectividad){
-            $this->fechaEfectividad = $fechaEfectividad;
+        public function setFechaInicio($fechaInicio){
+            $this->fechaInicio = $fechaInicio;
             return $this;
         }
 
-        public function getSucursalesPromocion(){
-            return $this->sucursalesPromocion;
+        public function getFechaFin(){
+            return $this->fechaFin;
         }
-        public function setSucursalesPromocion($sucursalesPromocion){
-            $this->sucursalesPromocion = $sucursalesPromocion;
+        public function setFechaFin($fechaFin){
+            $this->fechaFin = $fechaFin;
+            return $this;
+        }
+
+        public function getSucursales(){
+            return $this->sucursales;
+        }
+        public function setSucursales($sucursales){
+            $this->sucursales = $sucursales;
             return $this;
         }
     }

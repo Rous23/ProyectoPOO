@@ -5,15 +5,15 @@
         private $telefonoSucursal;
         private $direccionSucursal;
         private $latitudSucursal;
-        private $longitusSucursal;
+        private $longitudSucursal;
 
-        public function __construct($nombreSucursal,$emailSucursal,$telefonoSucursal,$direccionSucursal,$latitudSucursal,$longitusSucursal){
+        public function __construct($nombreSucursal,$emailSucursal,$telefonoSucursal,$direccionSucursal,$latitudSucursal,$longitudSucursal){
             $this->nombreSucursal = $nombreSucursal;
             $this->emailSucursal = $emailSucursal;
             $this->telefonoSucursal = $telefonoSucursal;
             $this->direccionSucursal = $direccionSucursal;
             $this->latitudSucursal = $latitudSucursal;
-            $this->longitusSucursal = $longitusSucursal;
+            $this->longitudSucursal = $longitudSucursal;
         }
 
         public function guardarSucursal($db,$idEmpresa){
@@ -23,9 +23,9 @@
                 ->push($sucursal);
                 
             if($result->getKey() != null)
-                return '{"mensaje":"Registro almacenado", "key":"'.$result->getKey().'"}';
+                return '{"codigo": 1, "mensaje":"Registro almacenado", "key":"'.$result->getKey().'"}';
             else
-                return '{"mensaje":"Error al guardar el registro"}';
+                return '{"codigo": 0 ,"mensaje":"Error al guardar el registro"}';
         }
 
         public static function obtenerSucursal($db,$idEmpresa,$idSucursal){
@@ -60,8 +60,7 @@
             $result['telefonoSucursal'] = $this->telefonoSucursal;
             $result['direccionSucursal'] = $this->direccionSucursal;
             $result['latitudSucursal'] = $this->latitudSucursal;
-            $result['longitusSucursal'] = $this->longitusSucursal;
-            
+            $result['longitudSucursal'] = $this->longitudSucursal;
             return $result;
         }
         public function getNombreSucursal()
@@ -119,13 +118,13 @@
                 return $this;
         }
 
-        public function getLongitusSucursal()
+        public function getLongitudSucursal()
         {
-                return $this->longitusSucursal;
+                return $this->longitudSucursal;
         }
-        public function setLongitusSucursal($longitusSucursal)
+        public function setLongitudSucursal($longitudSucursal)
         {
-                $this->longitusSucursal = $longitusSucursal;
+                $this->longitudSucursal = $longitudSucursal;
 
                 return $this;
         }

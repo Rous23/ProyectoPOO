@@ -1,0 +1,555 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+@media screen and (max-width: 500px){
+    .card{
+        width: 100%;
+    }
+    .texto-info{
+        width: 100%!important;
+    }
+    .titulos{
+        font-size: 30px!important;
+    }
+}
+@media screen and (max-width: 450px){
+    #detalle-categoria{
+        font-size: 13px!important;
+    }
+}
+@media screen and (max-width: 990px){
+    .content-inf{
+        display: block!important;
+    }
+    .img-estilo{
+        width: 100%;
+    }
+    .texto-info{
+        margin-top: 25px;
+    }
+}
+.content-inf{
+    display: flex;
+    justify-content: space-evenly;/*repartir el espacio equitativamente*/
+}
+body{
+    margin: 0;
+    padding-top: 5.3rem!important;
+    font-family: 'Baloo Thambi 2', cursive;
+    font-size: 15px;
+}
+.cards-paquetes{
+    border-radius: 5px;
+}
+.btn-circle {
+    border-radius: 100%;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+/********************Estilos Header********************/
+header{
+    width: 100%; 
+    background-image: url(../img/p1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+}
+header .contenido-header{
+    width: 100%;
+    height: 450px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px  0;
+    box-sizing: border-box;
+}
+.contenido-header h1{
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+}
+.contenido-header h2{
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+}
+#content-header{
+    background: linear-gradient(0deg, rgba(77, 170, 135, .9) 10%, rgba(77, 170, 135, .75) 90%);
+    width: 100%;
+    height: 100%; 
+    margin: 0 0 0 0;
+    box-sizing: border-box;
+}
+.textos-header{
+    font-size: 40px;
+    text-align: left;
+}
+.hr-header{
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 2px solid rgba(0,0,0,.1);
+}
+/********************Estilos Footer********************/
+footer{
+    background-color:rgb(77, 170, 135);
+}
+/******************************************************/
+.titulos{
+    color: rgba(77, 170, 135, .9);
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.content-clientes, .content-paquetes, .content-productos{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px;
+}
+/******************Informacion****************/
+.img-estilo{
+    max-width: 450px;
+    box-shadow: 1px 1px 10px 1px rgba(93, 60, 88, .95);
+}
+#subtitulos{
+    font-weight: bold;
+    font-size: 25px;
+}
+.informacion-tienda{
+    text-align: justify;
+}
+.card-deck .card{
+    box-shadow: 1px 3px 10px 2px rgba(93, 60, 88, .95);
+}
+.content-productos .card{
+    cursor: pointer; 
+    overflow:hidden;
+}
+.click-hover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(101, 57, 127, .90);
+    text-align: center;
+    transform: scale(0); /*para que la imagen que esta sobre no se mire*/
+    transition: 0.5s;
+}
+.card:hover .click-hover{
+    transform: scale(1);
+    color: white;
+    padding-top: 25px;
+}
+.content-productos .card{
+    box-shadow: 1px 1px 10px 1px rgba(93, 60, 88, .95);
+}
+.btn-grad {
+    background-color: rgb(101, 57, 128);
+    color: white;
+    transition: .5s;
+}
+.btn-grad:hover {
+    background-color: rgba(93, 60, 88, .95);
+    color: white;
+    transition: .5s;
+}
+.registro-clientes, .estilo-empresa .btn-grad:hover { 
+    color: white;
+    background-color: rgb(174, 126, 204);
+}
+.btn-actualizar{
+    color: white;
+    transition: .5s;
+}
+.btn-actualizar:hover{
+    color: white;
+    background-color: rgba(101, 57, 127, .60);
+}
+/**************Modal-LandingPage**************/
+.modal-incio-sesion .cards .card-body{
+    border: 1px solid #673AB7;
+}
+/*********************************************
+.input-error{
+    border: 1px solid red;
+    border: 1px solid rgba(255,126,95,.9);
+}
+.input-success{
+    border: 1px solid green!important;
+}
+#opciones{
+    background-color:white; 
+    box-align: center; 
+    box-sizing: border-box; 
+    box-shadow: 0px 0px 5px 0px rgba(255,126,95,.9); 
+    border-radius: 7px;
+}
+*******************************************/
+/**Principal**/
+.principal-background{
+    background: linear-gradient(0deg, #F2F2F2 80%, rgb(77, 170, 135, .98)100%); 
+}
+/*.col-lg-2, .col-md-3, .col-sm-6, .col-12{
+    padding-right: 6px!important;
+    padding-left: 6px!important;
+}*/
+
+#productos-principal .card-body{
+    text-align: center;
+    padding-bottom: 4px!important;
+    padding-top: 0%!important;
+}
+#productos-principal .card{
+    border-radius: 7px;
+}
+#info-tienda .col-3{
+    border-radius: 0%!important;
+    padding-right: 0%!important;
+    padding-left: 0%!important;
+}
+#card-categorias .col-lg-2, .col-md-3, .col-4{
+    padding-left: 5px!important;
+    padding-right: 5px!important;
+}
+.container-carousel{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+.container-carousel .img-thumbnail{
+    background-color: rgb(77, 170, 135);
+    border: 0px!important;
+}
+@media screen and (max-width: 460px){
+    .img-carousel{
+        height: 190px!important;
+    }
+}
+/*@media screen and (max-width: 490px){
+    .tamaño-img{
+        height: 100px!important;
+    }
+}*/
+/*******RegistrarseClientesYEmpresa*********/
+.registro-clientes{
+    background-image: url(../img/card8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 0%!important;
+}
+.estilo-empresa{
+    background-image: url(../img/card2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 0%!important;
+}
+/***********principal*********/
+#sidebar-categoria{
+    padding-left: 0%!important;
+    padding-right: 0%!important;
+}
+#sidebar-categoria li:hover{
+    background: rgba(93, 60, 88, .5);
+}
+#sidebar-categoria .nav-item{
+    position: relative;
+}
+#sidebar-categoria .nav-item .nav-link{
+    position: relative;
+}
+#sidebar-categoria .nav-link{
+    display: block;
+}
+#sidebar-categoria .nav-item .nav-link span {
+    font-size: .75rem;
+    display: block;
+}
+@media (min-width: 768px){
+    #sidebar-categoria .nav-item .nav-link span {
+    font-size: .85rem;
+    display: inline;
+    }
+    #sidebar-categoria .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 14rem;
+    }
+}
+@media (max-width: 768px) {
+    #mostrarSubCategoria img{
+        height: 140px!important;
+    }
+    #sidebar-categoria .nav-item .nav-link{
+        width: 4rem!important;
+        text-align: center!important;
+        padding: .5rem .5rem;
+    }
+    #sidebar-categoria .tam-letra{
+        font-size: 12px!important;
+    }
+
+}
+/*Perfil-Usuario*/
+@media (max-width: 575px) {
+    .contenedor-perfil-cliente , .contenedor-perfil-empresa{
+        height: 270px!important;
+    }
+    /*.fa-camera-retro{
+        font-size: 20px!important;
+        display: block!important;
+    }*/
+    .contenedor-banner{
+        height: 200px!important;
+    }
+    .img-perfil{
+        width: 120px!important;
+        height: 120px!important;
+        margin-left: 8px!important;
+    }
+}
+
+.contenedor-perfil-cliente, .contenedor-perfil-empresa{
+    height: 350px;
+    width: 100%;
+    padding: 0%!important; 
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+}
+.info-cliente, .info-empresa{
+    width: auto;
+    box-sizing: border-box;
+}
+#navbar-usuario{
+    padding: 0%!important;
+}
+.contenedor-banner{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+.img-perfil{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 150px;
+    width:200px;
+    height:200px;
+    box-sizing: border-box;
+
+}
+.dropdown-toggle::after {
+    display:none;
+}
+
+.nav-principal img{
+    vertical-align: middle;
+    border-style: none;
+}
+
+.nav-principal {
+    display: flex;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-principal .nav-link{
+    padding: .5rem .5rem;
+}
+.dropdown-menu-center{
+    left: 50% !important;
+    right: auto !important;
+    text-align: center !important;
+    transform: translate(-50%, 0) !important;
+    width: max-content;
+}
+
+.actualizar-perfil{
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 150px;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+
+.card-tienda{
+    box-sizing: border-box;
+    background-color: white!important; 
+    border-radius: 3px;
+    border: .5px solid rgb(232,232,232);
+}
+
+
+/*Empresa*/
+#banner-empresa{
+    background-image: url(../img/destello-del-otono-932.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+#comentario-empresa .cards{
+    border:1px solid rgb(209, 209, 209)!important;
+    box-sizing: border-box;
+    background-color: white!important; 
+    border-radius: 3px; 
+    margin: 20px;
+}
+/* --SIDEBAR Empresa-- */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+#sidebar{
+    background: rgb(77, 170, 135);
+}
+#sidebar .componentes-sidebar{
+    color: white;
+    font: bold;
+}
+#sidebar a{
+    text-decoration: none!important;
+}
+#sidebar .nav-item{
+    position: relative;
+}
+#sidebar .nav-item .nav-link{
+    position: relative;
+}
+#sidebar .nav-link{
+    display: block;
+}
+#sidebar .nav-item .nav-link span {
+    font-size: .65rem;
+    display: block;
+}
+#content h3{
+    font-size: .9rem!important;
+}
+#content {
+    width: 100%;
+    min-height: 100vh;
+}
+/* -- @media -- */
+@media (min-width: 768px){
+    #sidebar .nav-item .nav-link span {
+    font-size: .85rem;
+    display: inline;
+    }
+    #sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    width: 14rem;
+    }
+}
+@media (max-width: 768px) {
+    #sidebar .nav-item .nav-link{
+        width: 70px!important;
+        text-align: center!important;
+        padding: .5rem .5rem;
+    }
+}
+
+#botonesProducto .fa-store:hover{
+    font-size: 1.5rem;
+    color: rgba(77, 170, 135, .75)!important;
+}
+#botonesProducto .fa-shopping-cart:hover{
+    font-size: 1.5rem;
+    color: rgb(103, 57, 127, .75)!important;
+}
+#botonesProducto .fa-heart:hover{
+    font-size: 1.5rem;
+}
+#botonesProducto .fa-trash-alt:hover{
+    font-size: 1.5rem;
+}
+/*
+#buttons{
+    transition: .5s;
+}
+#buttons .fa-store:hover{
+    color: rgba(77, 170, 135, .5)!important;
+    font-size: 2.2rem!important;
+}
+#buttons .fa-shopping-cart:hover{
+    color: rgb(103, 57, 127, .5)!important;
+    font-size: 2.2rem!important
+}
+#buttons .fa-heart:hover{
+    color: red;
+}*/
+
+
+
+.btn-outline-grad{
+    transition: .5s;
+}
+.btn-outline-grad:hover{
+    color: #fff!important;
+    background-color: rgb(102, 57, 126) ;
+    border-color: rgb(102, 57, 126) ;
+}
+
+/*
+#formEstrellas {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #formEstrellas p {
+    text-align: center;
+  }*/
+  
+  #formEstrellas label {
+    font-size: 20px;
+  }
+  
+  #formEstrellas input[type="radio"] {
+    display: none;
+  }
+  
+  #formEstrellas label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  #formEstrellas label:hover,
+  #formEstrellas label:hover ~ label {
+    color: orange;
+  }
+  
+  #formEstrellas input[type="radio"]:checked ~ label {
+    color: orange;
+  }

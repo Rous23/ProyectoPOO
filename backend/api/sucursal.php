@@ -4,7 +4,7 @@
     require_once("../clases/class-database.php");
     
     $database = new Database();
-
+    $_POST = json_decode(file_get_contents('php://input'),true);
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST'://guardar
             
@@ -14,7 +14,7 @@
                 $_POST["telefonoSucursal"],
                 $_POST["direccionSucursal"],
                 $_POST["latitudSucursal"],
-                $_POST["longitusSucursal"]
+                $_POST["longitudSucursal"]
             );
 
             echo $sucursal->guardarSucursal($database->getDb(),$_GET['idEmpresa']);

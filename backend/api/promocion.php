@@ -4,7 +4,7 @@
     require_once("../clases/class-database.php");
     
     $database = new Database();
-
+    $_POST = json_decode(file_get_contents('php://input'),true);
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST'://guardar
             
@@ -16,11 +16,9 @@
                 $_POST["idCategoria"],
                 $_POST["precioPromocion"],
                 $_POST["porcentajeDescuento"],
-                $_POST["fechaEfectividad"],
-                array(
-                    'nombre' => $_POST['nombre'],
-                    'ubicacion' => $_POST['ubicacion'],
-                )
+                $_POST["fechaInicio"],
+                $_POST["fechaFin"],
+                $_POST['sucursales']
             );
 
             echo $promocion->guardarPromocion($database->getDb(),$_GET['idEmpresa']);

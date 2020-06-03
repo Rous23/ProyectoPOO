@@ -11,6 +11,11 @@
         }
 
         public function guardarEmpresaFav($db,$idCliente, $idEmpresa){
+            $seguidores = $this->addSeguidores($idCliente);
+            $res = "empresas/".$idEmpresa."/seguidores";
+            $likes = $db->getReference($res)
+                ->push($seguidores);
+
             $empresa = $this->getData($idEmpresa);
             $nodoReferencia = "clientes/".$idCliente."/empresasFavs";
             $result = $db->getReference($nodoReferencia)
@@ -23,6 +28,10 @@
 
         }
 
+        public function addSeguidores($idCliente){
+            $result['idCliente'] = $idCliente;
+            return $result;
+        }
         public function getData($idEmpresa){
             $result['nombreEmpresa'] = $this->nombreEmpresa;
             $result['imgPerfil'] = $this->imgPerfil;

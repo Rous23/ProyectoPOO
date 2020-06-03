@@ -4,7 +4,7 @@
     require_once("../clases/class-database.php");
     
     $database = new Database();
-    //$_POST = json_decode(file_get_contents('php://input'),true);
+    $_POST = json_decode(file_get_contents('php://input'),true);
 
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST'://guardar

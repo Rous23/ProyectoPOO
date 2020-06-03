@@ -1,10 +1,23 @@
 <?php
+    /*session_start();
+    if(!isset($_SESSION["token"])){
+        echo '{"mensaje": "Acceso no autorizado"}';
+        exit;
+    }
+    if(!isset($_COOKIE["token"])){
+        echo '{"mensaje": "Acceso no autorizado"}';
+        exit;
+    }
+    if($_SESSION["token"] != $_COOKIE["token"]){
+        echo '{"mensaje": "Acceso no autorizado"}';
+        exit;
+    }*/
     header("Content-Type: application/json");
     include_once("../clases/class-usuarioCliente.php");
     require_once("../clases/class-database.php");
     
     $database = new Database();
-
+    $_POST = json_decode(file_get_contents('php://input'),true);
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST'://guardar
             
@@ -30,9 +43,19 @@
                 )*/
 
             );
-
             echo $usuario->guardarUsuario($database->getDb());
-            
+
+            /*$arreglo = array(
+                "mensaje" => "Usuario guardado",
+                "codigoResultado" => "cliente",
+                "token" => sha1(uniqid(rand(),true)),
+                "nombreUsuario" => $usuario["nombreCompleto"]
+            );
+            $_SESSION["token"] = $arreglo["token"];
+            setcookie("token",$arreglo["token"] , time()+(60*60*24*31),"/");
+            setcookie("nombreUsuario",$arreglo["nombreUsuario"] , time()+(60*60*24*31),"/");
+            echo json_encode($arreglo);
+            */
         break;
         case 'GET':
             //echo "Parametro GET " . $_GET['id'];
