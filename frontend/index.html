@@ -14,7 +14,7 @@
 <body>
     <header>
         <div id="content-header">
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
                 <div class="container py-2">
                     <a style="color:#65397F; font-family: 'Lobster', cursive;" class="navbar-brand" href="#">
                         <span><img src="img/logo1.png" style="width:2.5rem; height:2.5rem;"> Luxuary</span>
@@ -55,21 +55,36 @@
         </div>
     </header>
 <!--Informacion-->
-    <div class="container content-clientes" style="position: relative;">
-        <div class="text-black text-center">
-            <div>
-                <h2 class="titulos">Sobre Nosotros</h2>
+    <div class="container-fluid content-clientes" style="position: relative;">
+        <div class="text-black">
+            <div class="text-center">
+                <h2 class="titulos">Información</h2>
             </div>
             <blockquote class="blockquote mb-0">
                 <div class="container content-inf">
-                    <div style="box-sizing: border-box;">
-                        <img src="img/i1.jpg" class="img-estilo">
+                    <div class="text-center px-1" style="min-width: 15rem!important;">
+                        <img src="img/mind_map.png" style="width: 100%;">
                     </div>
                     <div class="texto-info px-4">
-                        <span id="subtitulos">Las Mejores Promociones</span>
-                        <p class="informacion-tienda">Nuestra plataforma se encarga de mostrarte las mejores promociones y que puedas visualizar en que tienda puedes obtener el articulo que deseas.</p>
-                        <span id="subtitulos">Variedad de Productos</span>
-                        <p class="informacion-tienda">Tenemos los articulos que necesitas a un bajo precio, lo que necesitas esta aqui.</p>
+                        <div class="text-center">
+                            <span id="subtitulos">Todo está aquí</span>
+                        </div>                        
+                        <div style="justify-content: space-evenly;">
+                            <p class="informacion-tienda">
+                            Tienda en línea, donde emprendedores faciliten sus productos promocionales al mejor precio.</p>
+                        </div>
+                        <div class="text-center">
+                            <span id="subtitulos">Al registrarte como cliente</span></div>
+                        <div style="justify-content: space-evenly;">
+                            <p class="informacion-tienda">
+                            Podras acceder y realizar sus respectivas compras, compartir y comentar productos. Visitar perfiles empresariales y estar al dia con las promociones más recientes.
+                            </p>
+                        </div>
+                        <div class="text-center"><span id="subtitulos">Si eres una empresa</span></div>
+                        <div style="justify-content: space-evenly;">
+                            <p class="informacion-tienda">
+                            Podras dar a conocer tus promociones en variados productos a sus consumidores mediante planes de empresariales</p>
+                        </div>
                     </div>
                 </div>
             </blockquote>
@@ -78,47 +93,53 @@
 
 <!--Paquetes-->
     <section class="content-paquetes jumbotron">
-        <div class="container text-center">
+        <div class="container text-center py-3">
             <h2 class="titulos">Paquetes Empresariales</h2>
             <div class="row">
-                <div class="col-md-4 col-sm-6 py-4">
-                    <div class="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Gratis</h5>
-                        <hr>
-                        <p class="card-text py-3">$ 0 / mes <br> 10 usuarios incluidos <br>
-                            2 GB de almacenamiento <br>
-                            Soporte de correo electrónico <br>
-                            Acceso al centro de ayuda</p>
-                        </div>
-                        <!--<div class="card-footer">
-                        <small class="text-muted"></small>
-                        </div>-->
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 py-4">
-                    <div class="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Pro</h5>
-                        <hr>
-                        <p class="card-text py-3">$ 15 / mes <br>
-                                20 usuarios incluidos <br>
-                                10 GB de almacenamiento <br>
-                                Soporte prioritario por correo <br>
+                <div class="col-md-4 col-sm-6 py-2 px-4">
+                    <div>
+                        <div class="card" style="box-shadow: 1px 1px 10px 1px rgba(93, 60, 88, .95);">
+                            <div class="card-body">
+                            <h5 class="card-title">Gratis</h5>
+                            <hr>
+                            <p class="card-text py-3 informacion-tienda">$ 0 / mes <br> 10 usuarios incluidos <br>
+                                2 GB de almacenamiento <br>
+                                Soporte de correo electrónico <br>
                                 Acceso al centro de ayuda</p>
+                            </div>
+                            <!--<div class="card-footer">
+                            <small class="text-muted"></small>
+                            </div>-->
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 py-4">
-                    <div class="card">
-                        <div class="card-body">
-                        <h5 class="card-title">Crecimiento</h5>
-                        <hr>
-                        <p class="card-text py-3">$29 / mes <br>
-                                30 users included <br>
-                                15 GB of storage <br>
-                                Phone and email support <br>
-                                Help center access</p>
+                <div class="col-md-4 col-sm-6 py-2 px-4">
+                    <div>
+                        <div class="card" style="box-shadow: 1px 1px 10px 1px rgba(93, 60, 88, .95);">
+                            <div class="card-body">
+                            <h5 class="card-title">Pro</h5>
+                            <hr>
+                            <p class="card-text py-3 informacion-tienda">$ 15 / mes <br>
+                                    20 usuarios incluidos <br>
+                                    10 GB de almacenamiento <br>
+                                    Soporte prioritario por correo <br>
+                                    Acceso al centro de ayuda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 py-2 px-4">
+                    <div>
+                        <div class="card" style="box-shadow: 1px 1px 10px 1px rgba(93, 60, 88, .95);">
+                            <div class="card-body">
+                            <h5 class="card-title">Crecimiento</h5>
+                            <hr>
+                            <p class="card-text py-3 informacion-tienda">$29 / mes <br>
+                                    30 usuarios incluidos <br>
+                                    15 GB de almacenamiento <br>
+                                    Soporte prioritario por correo <br>
+                                    Acceso al centro de ayuda</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,83 +149,27 @@
 
 <!--Nuevas-Promociones-->
     <div class="content-productos container">
-        <h2 class="titulos">Nuevas promociones</h2>
-        <div class="container-fluid ">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card1.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
+        <h2 class="titulos">Expertos en los siguientes ambitos</h2>
+        <div class="text-center row">
+            <div class="col-md-4 col-12">
+                <div style="min-width: 8rem!important;min-height: 7rem!important;">
+                    <img style="width: 100%;" src="img/online_shopping (1).png" alt="">
+                    <h3 class="subtitulos">Promociones</h3>
+                    <p class="informacion-tienda">Diversos tipos de productos al mejor precio de promocion para poder gozar de estos servicios registrarte como cliente, y si deseas publicar productos para venta registrarte como empresa.</p>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card2.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div style="min-width: 8rem!important;min-height: 7rem!important;">
+                    <img style="width: 100%;" src="img/marketing_.png" alt="">
+                    <h3 class="subtitulos">Asistencia tecnica</h3>
+                    <p class="informacion-tienda">La pagina esta disponible las 24 horas para que compres sin problemas, y si tienes algun problema con nuestro servicio ponte en contacto con nosotros.</p>
                 </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card3.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card4.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card5.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card6.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card7.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-12 my-2">
-                    <div class="card">
-                        <img src="img/card8.jpg" class="card-img-top">
-                        <div class="click-hover">
-                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
-                            <span>Ver Producto</span>
-                        </div>
-                    </div>
-                </div>
-                <div id="mas-productos" class="col-12 my-2">
-                    <a style="color: black!important;" href="principal.html"><h5 class="text-right">Ver mas...</h5></a>
+            </div>
+            <div class="col-md-4 col-12">
+                <div style="min-width: 8rem!important;min-height: 7rem!important;">
+                    <img style="width: 100%;" src="img/creative_process.png" alt="">
+                    <h3 class="subtitulos">Seguridad</h3>
+                    <p class="informacion-tienda">Mantenemos a salvo todos los datos importantes de la empresa, desde los que pertenecen a la propia organización como los vinculados con trabajadores y clientes.</p>
                 </div>
             </div>
         </div>
@@ -219,7 +184,7 @@
     <footer style="background: rgb(77, 170, 135);">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-4 text-center">
+                <div class="col-md-4 col-12 text-center">
                     <div>
                         <h5 class="pt-4" style="color: white;">Siguenos en nuestras redes sociales</h5>
                         <div>
@@ -229,7 +194,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 text-center">
+                <div class="col-md-4 col-12 text-center">
                     <div style="color: white;">
                         <h5 class="pt-4" style="color: white;">Servicio al cliente</h5>
                         <div>
@@ -239,7 +204,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 text-center">
+                <div class="col-md-4 col-12 text-center">
                     <div style="color: white;">
                         <h5 class="pt-4" style="color: white;">Ayuda</h5>
                         <div>
@@ -255,7 +220,20 @@
             </div>
         </div>
     </footer>
-
+<!--<div class="col-lg-3 col-md-6 col-12 my-2">
+                    <div class="card">
+                        <img src="img/card8.jpg" class="card-img-top">
+                        <div class="click-hover">
+                            <span style="font-size: 3rem;display:block"><i class="far fa-hand-point-up"></i></span>
+                            <span>Ver Producto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div id="mas-productos" class="col-12 my-2">
+                    <a style="color: black!important;" href="principal.html"><h5 class="text-right">Ver mas...</h5></a>
+                </div>
+            </div>-->
 <!--ventanaModal1-->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -283,6 +261,7 @@
                                 <label for="password" class="col-form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="password" value="">
                             </div>
+                            <div id="mensajeInvalido"></div>
                             <div class="alert alert-danger" id="error" style="display: none;"></div>
                             <div class="row">
                                     <div class="col-6 mb-4">
@@ -333,7 +312,7 @@
                         <div class="row py-2 mx-3" style="margin:auto;">
                             <div class="col-lg-6 col-12 py-4">
                                 <div class="cards px-3 text-center" style="box-sizing: border-box;">
-                                    <img src="img/cards1.jpg" class="card-img-top">
+                                    <img src="img/money_transfer_.png" class="card-img-top">
                                     <div class="card-footer pb-3 mb-4" style="background: #65397f;">
                                         <a style="color:white;"  href="registrarse-cliente.html" class="card-text" >Registrarte como Cliente</a>
                                     </div>
@@ -341,7 +320,7 @@
                             </div>
                             <div class="col-lg-6 col-12 py-4">
                                 <div class="cards px-3 text-center" style="box-sizing: border-box;">
-                                    <img src="img/cards2.jpg" class="card-img-top">
+                                    <img src="img/google_ad.png" class="card-img-top">
                                     <div class="card-footer pb-3 mb-4" style="background: rgb(101, 57, 127);">
                                         <a style="color:white;" href="registrarse-empresa.html" class="card-text">Registrarte como Empresa
                                         </a>

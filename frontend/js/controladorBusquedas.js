@@ -1,6 +1,21 @@
 var URLsearch = window.location.search;
 if(URLsearch.substr(0,1) == '?'){
-    var datoBusqueda = URLsearch.substr(1);
+    var datoBus1 = URLsearch.substr(1);
+    dato = [];
+    for(let i=0 ; i<datoBus1.length ; i++){
+        if(datoBus1.split('%20')){
+            dato.push(datoBus1.split('%20'));
+            
+        }
+    }
+    var nuevo = dato[0]
+    var datoBus2 = nuevo.join(' ');
+    if(datoBus1 && !datoBus1.split('%20')){
+        var datoBusqueda = datoBus1;
+    }else{
+        var datoBusqueda = datoBus2
+    }
+    
 }
 console.log(datoBusqueda);
 (()=>{
@@ -25,9 +40,6 @@ function principalUsuarioLogin(){
             }).then(res=>{
                 document.getElementById('lista-navbar').innerHTML = '';
                 document.getElementById('lista-navbar').innerHTML = `
-                <li class="nav-item">
-                    <a href="perfil-cliente.php" class="nav-link" role="button" style="color: #67397F;">Perfil</a>
-                </li>
                 <li class="nav-item dropdown no-arrow mx-1">
                     <a href="carro-compras.html" class="nav-link" role="button">
                         <span><i class="fas fa-shopping-cart" style="color: #67397F;"></i></span> 
@@ -42,6 +54,8 @@ function principalUsuarioLogin(){
                         <div class="text-center">${res.data.nombreCompleto}</div>
                         <hr style="margin-top: .3rem;">
                         <div class="text-center">
+                            <a href="principal.html" class="nav-link" role="button" style="color: #67397F;">Principal</a>
+                            <a href="perfil-cliente.php" class="nav-link" role="button" style="color: #67397F;">Perfil</a>
                             <a href="cerrar-sesion.php">
                             <i class="fas fa-sign-out-alt" style="color: rgba(144, 142, 143, .8)"></i>
                             <span>Cerrar Sesion</span>
@@ -94,12 +108,7 @@ function imprimirDatosBusqueda(categorias){
                     </div>
                 </div>
                 `;
-            }/*else{
-                document.getElementById('resultadosBusqueda').innerHTML ='';
-                document.getElementById('resultadosBusqueda').innerHTML = `
-                <div class="text-center"><h1>No se encontraron Productos</h1></div>
-                `;
-            }*/
+            }
         }
     }
     //console.log(resultado);

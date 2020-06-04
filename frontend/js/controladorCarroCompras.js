@@ -67,7 +67,7 @@ function carroCompra(){
             document.getElementById('carroVacio').innerHTML = `
             <div class="ml-auto mr-auto">
                 <div class="ml-auto mr-auto" style="align-content: center;">
-                    <img src="img/shopping_cart.png" style="max-width: 190px;display: block;margin: auto;">
+                    <img src="img/shopping.png" style="max-width: 500px;display: block;margin: auto;">
                 </div>
                 <div class="ml-auto mr-auto pt-3" style="text-align: center;">
                     <h4>Aun no has agregado productos al carrito.</h4>
@@ -75,7 +75,7 @@ function carroCompra(){
             </div>
             `;
         }
-        
+        $('#compraRealizada').modal('hide');
     }).catch(err=>{
         console.error(err);
     })
@@ -123,7 +123,17 @@ function getCookie(name) {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
-function simulacionCompra(keyC,arrayEmpresas){}
+function simulacionCompra(keyC,arrayEmpresas){
+    axios({
+        url:`../../Proyecto/backend/api/carroCompras.php?idCliente=${keyCliente}`,
+        method:"delete",
+        }).then(res=>{
+            carroCompra();
+            $('#compraRealizada').modal('show');
+        }).catch(err=>{
+            console.error(err);
+    })
+}
 
 function eliminarProductoCarrito(idP){
     axios({

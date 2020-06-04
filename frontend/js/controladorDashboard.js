@@ -74,8 +74,8 @@ function imprimirComentarios(promociones){
         if(promociones.cantidadEstrellas){
             let suma = 0;
             let count = 0;
-            for(let key in datosP.cantidadEstrellas){
-                suma = suma + parseInt(datosP.cantidadEstrellas[key]);
+            for(let key in promociones.cantidadEstrellas){
+                suma = suma + parseInt(promociones.cantidadEstrellas[key]);
                 count = count + 1;
             }
             let total = suma/count;

@@ -259,7 +259,6 @@ function promocionesEmpresa(promociones){
                         <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L ${promociones[key].precioPromocion}</span>
                     </div>
                     <div class="disponibles px-3">
-                        <span class="text-muted">PendienteEstrellas</span>
                         <div>${promociones[key].porcentajeDescuento}</div>
                     </div>
                 </div>

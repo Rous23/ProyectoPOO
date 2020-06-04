@@ -2,6 +2,7 @@ var URLsearch = window.location.search;
 if(URLsearch.substr(0, 11) == '?idProducto'){
     var idProd = URLsearch.substr(12);
 }
+var miCodigoQR = new QRCode("codigoQR");
 var producto;
 var nombreC;
 (()=>{
@@ -11,10 +12,12 @@ var nombreC;
     }).then(res=>{
         producto = res.data;
         imprimirDatosProducto(producto);
+
     }).catch(err=>{
         console.error(err);
     })
 })();
+
 principalUsuarioLogin()
 function principalUsuarioLogin(){
     let idC = getCookie("keyCliente");
@@ -89,7 +92,7 @@ function imprimirDatosProducto(datosP){
                 <span class="text-muted py-3"id="precioAntes" style="text-decoration: line-through;"> L ${datosP.precioNormal}</span>
             </div>
             <div class="px-3 py-2">
-                <span>${datosP.porcentajeDescuento}</span>
+                <span>${datosP.porcentajeDescuento} Descuento</span>
             </div>
             <div class="px-3 pb-3">
                 <div id="porcentajeEstrellas"></div>
@@ -114,7 +117,6 @@ function imprimirDatosProducto(datosP){
                 </div>
             </div>
             <div>
-            
             </div>
         </div>
     </div>
@@ -154,6 +156,47 @@ function imprimirDatosProducto(datosP){
     document.getElementById('postComm').innerHTML = `
     <button onclick="guardarComentario('${idProd}','${datosP.idCategoria}','${datosP.idEmpresa}','${datosP.idProducto}')" type="button" class="btn btn-outline-grad" style="border-color:rgb(102, 57, 126) ;color: rgb(102, 57, 126);"><i class="fas fa-comments"></i></button>
     `;
+    mapaSucursales(datosP.sucursales);
+    generarQR(`http://localhost/POO/Proyecto/frontend/producto.html?idProducto=${idProd}`);
+}
+
+function mapaSucursales(sucursales){
+    if(sucursales){
+        console.log(producto);
+        
+        axios({
+            url:`../../Proyecto/backend/api/sucursal.php?idEmpresa=${producto.idEmpresa}`,
+            method:"get"
+            }).then(res=>{
+                console.log(res);
+                let sucursalesData = res.data;
+
+                var map = L.map('map1').setView([51.505, -0.09], 13);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                for(let i=0 ;i<sucursales.length; i++){
+                    for(let key in sucursalesData){
+                        if(key == sucursales[i]){
+                            console.log("entro");
+                            L.marker([sucursalesData[key].latitudSucursal,sucursalesData[key].longitudSucursal]).addTo(map)
+                                .bindPopup(sucursalesData[key].nombreSucursal)
+                                .openPopup();
+                        }
+                    }
+                }
+            }).catch(err=>{
+                console.error(err);
+        })
+    }else{
+        
+    }
+    
+}
+function generarQR(ruta){
+    var cadena = ruta;
+    miCodigoQR.makeCode(cadena);
+    console.log(cadena);
     
 }
 
@@ -565,8 +608,10 @@ function login(){
             window.location.href = "principal.html";
         }else if(res.data.codigoResultado == "empresa"){
             window.location.href = "dashboard.php";
+        }else if(res.data.codigoResultado == "admin"){
+            window.location.href = "admin.php";
         }else{
-            console.log(res.data);
+            document.getElementById('mensajeInvalido').innerHTML = `<span style="background-color:#ff0000;">${res.data.mensaje}</span>`;
         }
     }).catch(err=>{
         console.error(err);
@@ -598,6 +643,35 @@ function validarEmail(email){
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+/*function HTMLtoPDF(){
+    var pdf = new jsPDF('p', 'pt', 'letter');
+    source = $('#informacionProd')[0];
+    console.log(source);
+    
+    specialElementHandlers = {
+        '#bypassme': function(element, renderer){
+            return true
+        }
+    }
+    margins = {
+        top: 30,
+        left: 30,
+        width: 100
+    };
+    pdf.fromHTML(
+        source
+        , margins.left
+        , margins.top
+        , {
+            'width': margins.width
+            , 'elementHandlers': specialElementHandlers
+        },
+        function (dispose) {
+            pdf.save('productoLuxuary.pdf');
+        }
+    )		
+}*/
 /*function codigoQr(){
 
     axios({

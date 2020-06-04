@@ -46,8 +46,10 @@ function login(){
             window.location.href = "principal.html";
         }else if(res.data.codigoResultado == "empresa"){
             window.location.href = "dashboard.php";
+        }else if(res.data.codigoResultado == "admin"){
+            window.location.href = "admin.php";
         }else{
-            console.log(res.data);
+            document.getElementById('mensajeInvalido').innerHTML = `<span style="background-color:#ff0000;">${res.data.mensaje}</span>`;
         }
     }).catch(err=>{
         console.error(err);

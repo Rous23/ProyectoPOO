@@ -48,6 +48,8 @@ function registrarCliente(){
         //window.location.href = "categorias.html";
     //}
     var parametros = $('#formRegistro').serialize();
+    console.log(parametros);
+    
     if(listo){
         axios({
             url:`../../Proyecto/backend/api/usuarioCliente.php`,
@@ -60,6 +62,21 @@ function registrarCliente(){
                     document.getElementById('email').classList.add('is-invalid');
                     document.getElementById('mensajeCorreo').innerHTML = `${res.data.mensaje}`;
                 }else{
+                    document.getElementById('mensajeCorreo').innerHTML = '';
+                    if(document.getElementById('password') != '' && document.getElementById('password2') != ''){
+                        let p1 =document.getElementById('password').value;
+                        let p2 = document.getElementById('password2').value;
+                        if(p1 != p2) {
+                            document.getElementById('mensajePassword').innerHTML = "Las contraseñas no coinciden";
+                            document.getElementById('mensajePassword2').innerHTML = "Las contraseñas no coinciden";
+                            let respuesta = false;
+                            colorearInput('password', respuesta);
+                            return;
+                        }else{
+                            let respuesta = true;
+                            colorearInput('password', respuesta);
+                        }
+                    }
                     window.location.href = "principal.html";
                 }
                 if(document.getElementById('password') != '' && document.getElementById('password2') != ''){

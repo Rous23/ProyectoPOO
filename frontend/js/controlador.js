@@ -1,4 +1,4 @@
-var miCodigoQR = new QRCode("codigoQR");
+
 /*$(document).ready(function(){
   $("#generarCodigo").on("click",function(){
     var cadena = $("#item_txt").val();
@@ -17,7 +17,7 @@ var miCodigoQR = new QRCode("codigoQR");
     $("#descargarCodigo").trigger("click");
   });
 });*/
-
+var miCodigoQR = new QRCode("codigoQR");
 generarQR();
 function generarQR(){
     var cadena = 'http://localhost/POO/Proyecto/frontend/categorias.html';

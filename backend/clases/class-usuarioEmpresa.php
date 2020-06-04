@@ -48,7 +48,8 @@
                 $result = $db->getReference('empresas')
                         ->push($usuario);
                 
-                $resultAdmi = $db->getReference('Admi')
+                $ref = 'Admi/'.'empresas';
+                $resultAdmi = $db->getReference($ref)
                         ->push($this->guardarEmpresaAdmin());
                 
 

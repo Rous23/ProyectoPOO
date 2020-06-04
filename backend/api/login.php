@@ -3,6 +3,7 @@
     header("Content-Type: application/json");
     include_once("../clases/class-usuarioCliente.php");
     include_once("../clases/class-usuarioEmpresa.php");
+    include_once("../clases/class-admin.php");
     require_once("../clases/class-database.php");
     $database = new Database();
     $_POST = json_decode(file_get_contents('php://input'),true);
@@ -10,6 +11,7 @@
         case 'POST'://guardar
             $cliente = UsuarioCliente::verificarUsuario($database->getDb(),$_POST["email"],$_POST["password"]);
             $empresa = UsuarioEmpresa::verificarUsuario($database->getDb(),$_POST["email"],$_POST["password"]);
+            $admin = Administrador::verificarAdministrador($database->getDb(),$_POST["email"],$_POST["password"]);
             if($cliente){
                 $arreglo = array(
                     "mensaje" => "usuario Autenticado",
@@ -32,6 +34,15 @@
                 setcookie("token",$arreglo2["token"] , time()+(60*60*24*31),"/");
                 setcookie("nombreEmpresa",$arreglo2["nombreEmpresa"] , time()+(60*60*24*31),"/");
                 echo json_encode($arreglo2);
+            }else if($admin){
+                $arregloAdmin = array(
+                    "mensaje" => "usuario Autenticado",
+                    "codigoResultado" => "admin",
+                    "token" => sha1(uniqid(rand(),true))
+                );
+                $_SESSION["token"] = $arregloAdmin["token"];
+                setcookie("token",$arregloAdmin["token"] , time()+(60*60*24*31),"/");
+                echo json_encode($arregloAdmin);
             }else{ 
                 setcookie("token","" , time()-1,"/");
                 setcookie("nombreUsuario","" , time()-1,"/");

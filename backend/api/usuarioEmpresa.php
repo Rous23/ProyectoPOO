@@ -1,22 +1,9 @@
 <?php
-    session_start();
-    if(!isset($_SESSION["token"])){
-        echo '{"mensaje": "Acceso no autorizado"}';
-        exit;
-    }
-    if(!isset($_COOKIE["token"])){
-        echo '{"mensaje": "Acceso no autorizado"}';
-        exit;
-    }
-    if($_SESSION["token"] != $_COOKIE["token"]){
-        echo '{"mensaje": "Acceso no autorizado"}';
-        exit;
-    }
     header("Content-Type: application/json");
     include_once("../clases/class-usuarioEmpresa.php");
     require_once("../clases/class-database.php");
     $database = new Database();
-    $_POST = json_decode(file_get_contents('php://input'),true);
+    //$_POST = json_decode(file_get_contents('php://input'),true);
     switch($_SERVER['REQUEST_METHOD']){
         case 'POST'://guardar
             

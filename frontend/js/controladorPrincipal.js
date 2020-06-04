@@ -39,6 +39,7 @@ function principalUsuarioLogin(){
                         <div class="text-center">${res.data.nombreCompleto}</div>
                         <hr style="margin-top: .3rem;margin-bottom: .3rem;">
                         <div class="text-center">
+                            <a href="principal.html" class="nav-link" role="button" style="color: #67397F;">Principal</a>
                             <a href="perfil-cliente.php" class="nav-link" role="button" style="color: #67397F;">Perfil</a>
                             <a href="cerrar-sesion.php">
                             <i class="fas fa-sign-out-alt" style="color: rgba(144, 142, 143, .8)"></i>
@@ -160,30 +161,44 @@ function imprimirProductos(idCategoria,nombreCat){
         }).then(res=>{
             let productos = '';
             for (let indice in res.data.productos){
+                let stars = '';
+                if(res.data.productos[indice].cantidadEstrellas){
+                    let suma = 0;
+                    let count = 0;
+                    for(let key in res.data.productos[indice].cantidadEstrellas){
+                        suma = suma + parseInt(res.data.productos[indice].cantidadEstrellas[key]);
+                        count = count + 1;
+                    }
+                    let total = suma/count;
+                    stars =  `
+                    <span>${parseFloat(total.toFixed(2))+'%'} <label id="chk" for="radio1" style="font-size: 16px;color: orange;">★</label></span>
+                    `;
+                }
                 productos += `
                 <div class="col-lg-3 col-sm-4 col-6 px-1 py-1">
                     <div class="card shadow-sm">
                         <div onclick="detallesProducto('${indice}','${idCategoria}')" style="cursor:pointer">
-                            <img src="img/${res.data.productos[indice].imgProducto}" class="card-img-top" style="height:180px;">
+                            <img src="Proyecto/${res.data.productos[indice].imgProducto}" class="card-img-top" >
                             <div class="card-body" style="padding: .5rem!important;">
                                 <h6 class="card-title">${res.data.productos[indice].nombreProducto}</h6>
-                                <span>${res.data.productos[indice].porcentajeDescuento}</span>
+                                <span id="porcentajeEs" class="d-block">${stars}</span>
+                                <span>${res.data.productos[indice].porcentajeDescuento} Descuento</span>
                                 <div class="precios" style="color: red;">
-                                <span id="precioActual">L ${res.data.productos[indice].precioNormal}</span>
-                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L ${res.data.productos[indice].precioPromocion}</span>
+                                    <span id="precioActual">L ${res.data.productos[indice].precioNormal}</span>
+                                    <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L ${res.data.productos[indice].precioPromocion}</span>
                                 </div>
                             </div>
                         </div>
                         <hr style="margin:0%!important">
                         <div class="text-center py-2">
                             <div id="botonesProducto">
-                            <a id="${indice}" onclick="obtenerProd('${indice}','${idCategoria}')" style="padding:5px!important;cursor:pointer;" role="button">
-                                <i class="far fa-heart" style="color: red;"></i>
-                            </a>
-                            <a id="${indice}" onclick="irPerfilEmpresa('${res.data.productos[indice].idEmpresa}')" style="padding:5px!important;cursor:pointer;" role="button">
-                                <i id="tienda" class="fas fa-store" style="color: rgb(77, 170, 135);"></i></a>
-                            <a id="${indice}" onclick="agregarCarrito('${indice}','${idCategoria}')" style="padding:5px!important;color: rgb(102, 57, 126);cursor:pointer;" role="button">
-                            <i class="fas fa-shopping-cart"></i></a>
+                                <a id="${indice}" onclick="obtenerProd('${indice}','${idCategoria}')" style="padding:5px!important;cursor:pointer;" role="button">
+                                    <i class="far fa-heart" style="color: red;"></i>
+                                </a>
+                                <a id="${indice}" onclick="irPerfilEmpresa('${res.data.productos[indice].idEmpresa}')" style="padding:5px!important;cursor:pointer;" role="button">
+                                    <i id="tienda" class="fas fa-store" style="color: rgb(77, 170, 135);"></i></a>
+                                <a id="${indice}" onclick="agregarCarrito('${indice}','${idCategoria}')" style="padding:5px!important;color: rgb(102, 57, 126);cursor:pointer;" role="button">
+                                <i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                     </div>
@@ -220,20 +235,45 @@ function mostrarProductos(idCategoria){
             if(grupoProductos){
                 //console.log(grupoProductos);
                 for (let indice in grupoProductos){
+                    let stars = '';
+                    if(grupoProductos[indice].cantidadEstrellas){
+                        let suma = 0;
+                        let count = 0;
+                        for(let key in grupoProductos[indice].cantidadEstrellas){
+                            suma = suma + parseInt(grupoProductos[indice].cantidadEstrellas[key]);
+                            count = count + 1;
+                        }
+                        let total = suma/count;
+                        stars =  `
+                        <span>${parseFloat(total.toFixed(2))+'%'} <label id="chk" for="radio1" style="font-size: 16px;color: orange;">★</label></span>
+                        `;
+                    }
                     document.getElementById('mostrarSubCategoria').innerHTML += `
-                    <div class="col-lg-3 col-md-4 col-6 px-1 py-1">
-                        <div onclick="detallesProducto('${indice}','${idCategoria}')"  class="card shadow-sm" style="cursor:pointer">
-                            <img src="img/${grupoProductos[indice].imgProducto}" class="card-img-top" style="height:180px;">
-                            <div class="card-body" style="padding: .5rem!important;">
-                                <h6 class="card-title">${grupoProductos[indice].nombreProducto}</h6>
-                                <span>${grupoProductos[indice].porcentajeDescuento}</span>
-                                <div class="precios" style="color: red;">
-                                <span id="precioActual">L ${grupoProductos[indice].precioNormal}</span>
-                                <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L ${grupoProductos[indice].precioPromocion}</span>
+                    <div class="col-lg-3 col-sm-4 col-6 px-1 py-1">
+                        <div class="card shadow-sm">
+                            <div onclick="detallesProducto('${indice}','${idCategoria}')"style="cursor:pointer">
+                                <img src="Proyecto/${grupoProductos[indice].imgProducto}" class="card-img-top">
+                                <div class="card-body" style="padding: .5rem!important;">
+                                    <h6 class="card-title">${grupoProductos[indice].nombreProducto}</h6>
+                                    <span id="porcentajeEs" class="d-block">${stars}</span>
+                                    <span>${grupoProductos[indice].porcentajeDescuento} Descuento</span>
+                                    <div class="precios" style="color: red;">
+                                        <span id="precioActual">L ${grupoProductos[indice].precioNormal}</span>
+                                        <span class="text-muted"id="precioAntes" style="text-decoration: line-through;"> L ${grupoProductos[indice].precioPromocion}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card-footer" style="padding: .2rem .5rem!important;">
-                                <p class="card-text">${grupoProductos[indice].porcentajeDescuento}</p>
+                            <hr style="margin:0%!important">
+                            <div class="text-center py-2">
+                                <div id="botonesProducto">
+                                    <a id="${indice}" onclick="obtenerProd('${indice}','${idCategoria}')" style="padding:5px!important;cursor:pointer;" role="button">
+                                        <i class="far fa-heart" style="color: red;"></i>
+                                    </a>
+                                    <a id="${indice}" onclick="irPerfilEmpresa('${res.data.productos[indice].idEmpresa}')" style="padding:5px!important;cursor:pointer;" role="button">
+                                        <i id="tienda" class="fas fa-store" style="color: rgb(77, 170, 135);"></i></a>
+                                    <a id="${indice}" onclick="agregarCarrito('${indice}','${idCategoria}')" style="padding:5px!important;color: rgb(102, 57, 126);cursor:pointer;" role="button">
+                                    <i class="fas fa-shopping-cart"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -687,8 +727,10 @@ function login(){
             window.location.href = "principal.html";
         }else if(res.data.codigoResultado == "empresa"){
             window.location.href = "dashboard.php";
+        }else if(res.data.codigoResultado == "admin"){
+            window.location.href = "admin.php";
         }else{
-            console.log(res.data);
+            document.getElementById('mensajeInvalido').innerHTML = `<span style="background-color:#ff0000;">${res.data.mensaje}</span>`;
         }
     }).catch(err=>{
         console.error(err);

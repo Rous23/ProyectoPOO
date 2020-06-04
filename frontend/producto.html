@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="fontawesome-free-5.12.1-web/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Lobster&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logo1.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 </head>
 <body>
     <div id="navbar-principal">
@@ -55,26 +56,46 @@
         </nav>
     </div>
 
-    <div class="container  py-4" style="min-height: 100vh;">
+    <div class="container-fluid  py-3" style="min-height: 100vh;">
         <div class="card">
             <div class="card-header">
                 Informacion del producto
             </div>
             <div id="informacionProd" class="container"></div>
-            <hr style="margin-top: 0%!important;">
-            <div id="comentariosC" class="px-5"></div>
-            <div class="px-5">
-                <div class="input-group mb-3">
-                    <input id="contenidoComm" type="text" class="form-control" placeholder="Comentario">
-                    <div id="postComm" class="input-group-append"></div>
+        </div>
+        <div class="container-fluid py-2">
+            <div class="row px-1 py-1">
+                <div class="col-lg-3 col-md-4 col-12 pt-2">
+                    <div>
+                        <div id="codigoQR"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-12">
+                    <div class="mapa" style="width: 100%;">
+                        <div>
+                            <div>
+                                <span>Sucursales En donde esta el producto</span>
+                            </div>
+                            <div id="map1" style="width:100%;height:300px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-12">
+                    <div id="comentariosC" class="p-2" ></div>
+                    <div class="px-1">
+                        <div class="input-group mb-3">
+                            <input id="contenidoComm" type="text" class="form-control"  placeholder="Comentario">
+                            <div id="postComm" class="input-group-append"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
     </div>
+    
 
     <!--footer-->
-    <p class="text-center pt-3">
+    <p class="text-center bottom-up pt-3">
         <a href="#" role="button" style="padding: 0%!important;">
             <span style="font-size: 3rem;color: rgb(77, 170, 135);"><i class="fas fa-arrow-circle-up"></i></span>
         </a>
@@ -155,7 +176,7 @@
                         <div class="row py-2 mx-3" style="margin:auto;">
                             <div class="col-lg-6 col-12 py-4">
                                 <div class="cards px-3 text-center" style="box-sizing: border-box;">
-                                    <img src="img/cards1.jpg" class="card-img-top">
+                                    <img src="img/money_transfer_.png" class="card-img-top">
                                     <div class="card-footer pb-3 mb-4" style="background: #65397f;">
                                         <a style="color:white;"  href="registrarse-cliente.html" class="card-text" >Registrarte como Cliente</a>
                                     </div>
@@ -163,7 +184,7 @@
                             </div>
                             <div class="col-lg-6 col-12 py-4">
                                 <div class="cards px-3 text-center" style="box-sizing: border-box;">
-                                    <img src="img/cards2.jpg" class="card-img-top">
+                                    <img src="img/google_ad.png" class="card-img-top">
                                     <div class="card-footer pb-3 mb-4" style="background: rgb(101, 57, 127);">
                                         <a style="color:white;" href="registrarse-empresa.html" class="card-text">Registrarte como Empresa
                                         </a>
@@ -182,7 +203,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Mensaje</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -216,6 +237,8 @@
     <script src="js/jquery-3.4.1.slim.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="js/qrcode.js"></script>
     <script src="js/axios.min.js"></script>
     <script src="js/controladorProducto.js"></script>
 </body>

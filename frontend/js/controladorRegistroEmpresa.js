@@ -75,6 +75,21 @@ function registrarEmpresa(){
                     document.getElementById('email').classList.add('is-invalid');
                     document.getElementById('mensajeCorreo').innerHTML = `${res.data.mensaje}`;
                 }else{
+                    document.getElementById('mensajeCorreo').innerHTML = '';
+                    if(document.getElementById('contraseña') != '' && document.getElementById('contraseña2') != ''){
+                        let p1 =document.getElementById('contraseña').value;
+                        let p2 = document.getElementById('contraseña2').value;
+                        if(p1 != p2) {
+                            document.getElementById('mensajePassword').innerHTML = "Las contraseñas no coinciden";
+                            document.getElementById('mensajePassword2').innerHTML = "Las contraseñas no coinciden";
+                            let respuesta = false;
+                            colorearInput('contraseña', respuesta);
+                            return;
+                        }else{
+                            let respuesta = true;
+                            colorearInput('contraseña', respuesta);
+                        }
+                    }
                     window.location.href = "dashboard.php";
                 }
                 if(document.getElementById('contraseña') != '' && document.getElementById('contraseña2') != ''){

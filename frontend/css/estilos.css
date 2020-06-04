@@ -8,9 +8,14 @@
     }
     .texto-info{
         width: 100%!important;
+        font-size: 15px!important;
+        padding: 0%!important;
     }
     .titulos{
-        font-size: 30px!important;
+        font-size: 25px!important;
+    }
+    .informacion-tienda{
+        font-size: 15px!important;
     }
 }
 @media screen and (max-width: 450px){
@@ -21,9 +26,6 @@
 @media screen and (max-width: 990px){
     .content-inf{
         display: block!important;
-    }
-    .img-estilo{
-        width: 100%;
     }
     .texto-info{
         margin-top: 25px;
@@ -121,7 +123,7 @@ footer{
     font-size: 25px;
 }
 .informacion-tienda{
-    text-align: justify;
+    font-size: 20px;
 }
 .card-deck .card{
     box-shadow: 1px 3px 10px 2px rgba(93, 60, 88, .95);
@@ -285,9 +287,9 @@ footer{
     }
 }
 @media (max-width: 768px) {
-    #mostrarSubCategoria img{
+    /*#mostrarSubCategoria img{
         height: 140px!important;
-    }
+    }*/
     #sidebar-categoria .nav-item .nav-link{
         width: 4rem!important;
         text-align: center!important;
@@ -298,6 +300,7 @@ footer{
     }
 
 }
+
 /*Perfil-Usuario*/
 @media (max-width: 575px) {
     .contenedor-perfil-cliente , .contenedor-perfil-empresa{
@@ -468,6 +471,11 @@ footer{
     width: 14rem;
     }
 }
+@media (max-width:900px){
+    #carouselExampleCaptions .tamañoCar{
+        font-size: 30px!important;
+    }
+}
 @media (max-width: 768px) {
     #sidebar .nav-item .nav-link{
         width: 70px!important;
@@ -553,3 +561,12 @@ footer{
   #formEstrellas input[type="radio"]:checked ~ label {
     color: orange;
   }
+
+@media print{
+    #navbar-principal, #comentariosC, .bottom-up, footer{
+        display: none;
+    }
+    #postComm, #contenidoComm{
+        display: none;
+    }
+}
